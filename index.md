@@ -6,21 +6,14 @@ permalink: /
 
 ## Hi, I'm **Arthur Rodrigues** 👋
 
-**iOS Developer** | Swift • SwiftUI • MVVM | Based in Malta
+![Photo of Arthur Rodrigues](/assets/images/profile.jpg){: style="width:150px; border-radius: 75px; float: right; margin-left: 20px;" }
 
 I craft high-quality, performant, and scalable iOS applications — with a focus on **clean architecture**, maintainability, and delightful user experience.
 
-[View Projects](/projects/) • [Read My Blog](/blog/)
+---
 
-## Featured Projects
+### Latest Posts
 
-### Running Tracker
-A SwiftUI-based running tracker with CoreLocation, HealthKit integration and offline sync.  
-**Tech:** Swift, SwiftUI, CoreData, HealthKit, Combine  
-**Role:** Solo developer — architecture, UI, tests  
-[GitHub](https://github.com/ArthurSMR/running-tracker)
-
-### Payment Module (example)
-Modular payment architecture with MVVM-C and Combine, built for testability and integration.  
-**Tech:** Swift, Combine, Unit Tests, CI  
-[GitHub](https://github.com/ArthurSMR/payment-module)
+{% for post in site.posts limit:3 %}
+- [{{ post.title }}]({{ post.url | relative_url }}) — {{ post.date | date: "%B %d, %Y" }}
+{% endfor %}
