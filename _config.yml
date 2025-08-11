@@ -4,10 +4,6 @@ url: "https://arthursmr.github.io"
 baseurl: ""
 lang: "en-US"
 
-author:
-  name: "Arthur Rodrigues"
-  email: "arthursmr17@gmail.com"
-
 theme: minima
 
 plugins:
