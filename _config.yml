@@ -3,7 +3,20 @@ email: arthursmr17@gmail.com
 description: "iOS Developer – Swift • SwiftUI • MVVM"
 baseurl: "" # leave empty for a user site (username.github.io)
 url: "https://arthursmr.github.io"
-# theme: minima
+theme: minima
 plugins:
   - jekyll-feed
 github_username: ArthurSMR
+
+minima:
+  social_links:
+    - title: "GitHub"
+      icon: "github"
+      url: "https://github.com/ArthurSMR"
+    - title: "LinkedIn"
+      icon: "linkedin"
+      url: "https://www.linkedin.com/in/arthursmr17/"
+    - title: "X"   # ex-Twitter
+      icon: "x-twitter"
+      url: "https://x.com/thui_dev"
+  hide_site_feed_link: true
