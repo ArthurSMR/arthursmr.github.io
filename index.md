@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: default
 title: Home
 permalink: /
 ---
@@ -14,4 +14,6 @@ I craft high-quality, performant, and scalable iOS applications — with a focus
 
 ### Latest Posts
 
-{% include recent_posts.html limit=3 %}
+{% for post in site.posts limit:3 %}
+- [{{ post.title }}]({{ post.url | relative_url }}) — {{ post.date | date: "%B %d, %Y" }}
+{% endfor %}

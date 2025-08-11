@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: Projects
 permalink: /projects/
 ---
@@ -9,7 +9,7 @@ permalink: /projects/
 ## Running Tracker
 
 A SwiftUI-based running tracker with CoreLocation, HealthKit integration, and offline sync.  
-[GitHub Repository](https://github.com/ArthurSMR/running-tracker)  
+[GitHub Repository](https://github.com/ArthurSMR/running-tracker)
 
 ---
 

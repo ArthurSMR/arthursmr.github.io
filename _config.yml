@@ -9,7 +9,7 @@ author:
   email: "arthursmr17@gmail.com"
   url: "https://arthursmr.github.io"
 
-theme: minimal-mistakes-jekyll
+theme: minima
 
 plugins:
   - jekyll-feed
@@ -17,25 +17,14 @@ plugins:
   - jekyll-sitemap
 
 # Navigation menu items
-nav:
-  - title: "Home"
-    url: /
-  - title: "Projects"
-    url: /projects/
-  - title: "Blog"
-    url: /blog/
-  - title: "About"
-    url: /about/
+minima:
+  nav_pages:
+    - index.md
+    - projects.md
+    - blog.md
+    - about.md
 
 # Social links (icons aparecem automaticamente)
-social:
-  github: "ArthurSMR"
-  twitter: "thui_dev"
-  linkedin: "arthursmr17"
-
-# Dark mode ativado
-minimal_mistakes_skin: "dark"
-
-# Outras opções do tema
-exclude:
-  - README.md
+github_username: ArthurSMR
+twitter_username: thui_dev
+linkedin_username: arthursmr17
