@@ -1,9 +1,35 @@
 title: "Swift for all - by Arthur Rodrigues"
 email: arthursmr17@gmail.com
 description: "iOS Developer – Swift • SwiftUI • MVVM"
-baseurl: "" # leave empty for a user site (username.github.io)
+baseurl: ""            # user site: keep empty
 url: "https://arthursmr.github.io"
 theme: minima
+
 plugins:
   - jekyll-feed
+
 github_username: ArthurSMR
+
+# Minima-specific config: nav + socials + options
+minima:
+  # order e quais páginas aparecem no menu (use o nome do arquivo .md)
+  nav_pages:
+    - index.md
+    - projects.md
+    - blog.md
+    - about.md
+
+  # social links que o Minima renderiza automaticamente no footer
+  social_links:
+    - title: "GitHub"
+      icon: "github"
+      url: "https://github.com/ArthurSMR"
+    - title: "LinkedIn"
+      icon: "linkedin"
+      url: "https://www.linkedin.com/in/arthursmr17/"
+    - title: "X"
+      icon: "x-twitter"
+      url: "https://x.com/thui_dev"
+
+  # opcional: remover o link "subscribe via RSS" do social list
+  hide_site_feed_link: true
