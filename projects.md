@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page
 title: Projects
 permalink: /projects/
 ---
@@ -7,9 +7,13 @@ permalink: /projects/
 # Projects
 
 ## Running Tracker
-Short description and highlights. Link to repo, screenshots, demo.
+
+A SwiftUI-based running tracker with CoreLocation, HealthKit integration, and offline sync.  
+[GitHub Repository](https://github.com/ArthurSMR/running-tracker)  
+
+---
 
 ## Payment Module
-Short description and highlights.
 
-(Replace the entries above with your real projects — each proj
+Modular payment architecture with MVVM-C and Combine, built for testability and integration.  
+[GitHub Repository](https://github.com/ArthurSMR/payment-module)

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: Home
 permalink: /
 ---
@@ -14,4 +14,4 @@ I craft high-quality, performant, and scalable iOS applications — with a focus
 
 ### Latest Posts
 
-{% raw %}{% include post-list.html limit=3 %}{% endraw %}
+{% include recent_posts.html limit=3 %}
