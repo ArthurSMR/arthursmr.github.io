@@ -7,3 +7,5 @@ theme: minima
 plugins:
   - jekyll-feed
 github_username: ArthurSMR
+minima:
+  skin: dark
