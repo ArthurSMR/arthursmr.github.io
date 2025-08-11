@@ -25,4 +25,3 @@ minima:
     - about.md
 
   hide_site_feed_link: true
-  skin: dark
