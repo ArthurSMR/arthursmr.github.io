@@ -2,26 +2,40 @@ title: "Swift for all - by Arthur Rodrigues"
 description: "iOS Developer – Swift • SwiftUI • MVVM"
 url: "https://arthursmr.github.io"
 baseurl: ""
-lang: "en"
+lang: "en-US"
 
 author:
   name: "Arthur Rodrigues"
   email: "arthursmr17@gmail.com"
+  url: "https://arthursmr.github.io"
 
-theme: minima
+theme: minimal-mistakes-jekyll
 
 plugins:
   - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
 
-github_username: ArthurSMR
-twitter_username: thui_dev
-linkedin_username: arthursmr17
+# Navigation menu items
+nav:
+  - title: "Home"
+    url: /
+  - title: "Projects"
+    url: /projects/
+  - title: "Blog"
+    url: /blog/
+  - title: "About"
+    url: /about/
 
-minima:
-  nav_pages:
-    - index.md
-    - projects.md
-    - blog.md
-    - about.md
+# Social links (icons aparecem automaticamente)
+social:
+  github: "ArthurSMR"
+  twitter: "thui_dev"
+  linkedin: "arthursmr17"
 
-  hide_site_feed_link: true
+# Dark mode ativado
+minimal_mistakes_skin: "dark"
+
+# Outras opções do tema
+exclude:
+  - README.md
