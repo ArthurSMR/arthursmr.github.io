@@ -1,8 +1,13 @@
 title: "Swift for all - by Arthur Rodrigues"
-email: arthursmr17@gmail.com
 description: "iOS Developer – Swift • SwiftUI • MVVM"
-baseurl: ""            # user site: keep empty
 url: "https://arthursmr.github.io"
+baseurl: ""
+lang: "en"
+
+author:
+  name: "Arthur Rodrigues"
+  email: "arthursmr17@gmail.com"
+
 theme: minima
 
 plugins:
@@ -12,14 +17,12 @@ github_username: ArthurSMR
 twitter_username: thui_dev
 linkedin_username: arthursmr17
 
-# Minima-specific config: nav + socials + options
 minima:
-  # order e quais páginas aparecem no menu (use o nome do arquivo .md)
   nav_pages:
     - index.md
     - projects.md
     - blog.md
     - about.md
 
-  # opcional: remover o link "subscribe via RSS" do social list
   hide_site_feed_link: true
+  skin: dark
