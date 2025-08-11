@@ -9,6 +9,8 @@ plugins:
   - jekyll-feed
 
 github_username: ArthurSMR
+twitter_username: thui_dev
+linkedin_username: arthursmr17
 
 # Minima-specific config: nav + socials + options
 minima:
@@ -18,18 +20,6 @@ minima:
     - projects.md
     - blog.md
     - about.md
-
-  # social links que o Minima renderiza automaticamente no footer
-  social_links:
-    - title: "GitHub"
-      icon: "github"
-      url: "https://github.com/ArthurSMR"
-    - title: "LinkedIn"
-      icon: "linkedin"
-      url: "https://www.linkedin.com/in/arthursmr17/"
-    - title: "X"
-      icon: "x-twitter"
-      url: "https://x.com/thui_dev"
 
   # opcional: remover o link "subscribe via RSS" do social list
   hide_site_feed_link: true
