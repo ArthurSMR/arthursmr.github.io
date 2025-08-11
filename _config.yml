@@ -3,7 +3,7 @@ email: arthursmr17@gmail.com
 description: "iOS Developer – Swift • SwiftUI • MVVM"
 baseurl: "" # leave empty for a user site (username.github.io)
 url: "https://arthursmr.github.io"
-theme: minima
+# theme: minima
 plugins:
   - jekyll-feed
 github_username: ArthurSMR

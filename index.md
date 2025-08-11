@@ -14,6 +14,4 @@ I craft high-quality, performant, and scalable iOS applications — with a focus
 
 ### Latest Posts
 
-{% for post in site.posts limit:3 %}
-- [{{ post.title }}]({{ post.url | relative_url }}) — {{ post.date | date: "%B %d, %Y" }}
-{% endfor %}
+{% raw %}{% include post-list.html limit=3 %}{% endraw %}
