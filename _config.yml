@@ -7,7 +7,6 @@ lang: "en-US"
 author:
   name: "Arthur Rodrigues"
   email: "arthursmr17@gmail.com"
-  url: "https://arthursmr.github.io"
 
 theme: minima
 
@@ -16,15 +15,11 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
 
-# Navigation menu items
 minima:
   nav_pages:
-    - index.md
     - projects.md
     - blog.md
     - about.md
 
-# Social links (icons aparecem automaticamente)
 github_username: ArthurSMR
-twitter_username: thui_dev
 linkedin_username: arthursmr17
