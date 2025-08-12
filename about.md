@@ -4,10 +4,25 @@ title: About
 permalink: /about/
 ---
 
-# About me
+# About
 
-I'm Arthur Rodrigues, an iOS developer with experience in Swift, SwiftUI, and mobile architectures. Recently moved to Malta and focusing on building scalable iOS products, testing, and solid engineering practices.
+I'm Arthur Rodrigues, an iOS engineer with 5+ years building mobile products for banking, media and security. I moved to Malta and currently focus on scalable iOS architectures, payments integration and observability.
 
-**Contact:**  
-- [GitHub](https://github.com/ArthurSMR)  
-- [LinkedIn](https://www.linkedin.com/in/arthursmr17/)
+## Quick facts
+- 🇧🇷 Based in Malta.  
+- 📧 arthursmr17@gmail.com • [LinkedIn](https://www.linkedin.com/in/arthursmr17/) • [GitHub](https://github.com/ArthurSMR)
+
+## Selected achievements
+- Helped redesign the payment flow at a major bank, improving CI/CD velocity and reliability.  
+- Worked on Globo Esporte native app — conversion from web increased engagement and App Store rating (3.5 → 4.8).  
+- Built GigaGloob initial version; app recognized on Play Store.
+
+## Skills
+
+**Languages & frameworks**  
+Swift · SwiftUI · UIKit · Combine · Flutter (Dart)
+
+**Architecture**  
+Clean Architecture · VIP / MVVM · CoreData · GraphQL · REST · CI/CD (GitHub Actions, Bitrise) · Unit & UI Tests
+
+---

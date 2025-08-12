@@ -6,14 +6,23 @@ permalink: /projects/
 
 # Projects
 
-## Running Tracker
+Below are project highlights — click for case studies, architecture notes and public repos.
 
-A SwiftUI-based running tracker with CoreLocation, HealthKit integration, and offline sync.  
-[GitHub Repository](https://github.com/ArthurSMR/running-tracker)
+## Payment Module
+Modular payment service for banking flows — focused on security, testability and multi-bank integrations.  
+**Role:** Senior iOS Developer — architecture, testing, CI/CD.  
+**Tech:** Swift, Combine, VIP, Unit & UI tests.  
+[Read case study](/projects/payment-module/) • (internal repo / case study)
 
 ---
 
-## Payment Module
+## Globo Esporte (native)
+Converted high-traffic sports site to native iOS app; implemented analytics, media playback and improved UI flows.  
+**Impact:** increased engagement and App Store rating.  
+[Case study](/projects/globo-esporte/)
 
-Modular payment architecture with MVVM-C and Combine, built for testability and integration.  
-[GitHub Repository](https://github.com/ArthurSMR/payment-module)
+---
+
+## GigaGloob
+Initial version of kids streaming & games app; worked on architecture and game download manager.  
+[Case study](/projects/gigagloob/)
