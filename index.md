@@ -11,10 +11,3 @@ Here I share articles on Swift, SwiftUI, and MVVM, along with tips on mobile dev
 When I’m not coding, you’ll probably find me running 🏃‍♂️ or at the gym 💪.
 I hope you find something useful or inspiring here!
 [More about me](/about/).
-
----
-
-### Latest Posts
-{% for post in site.posts limit:3 %}
-- [{{ post.title }}]({{ post.url | relative_url }}) — {{ post.date | date: "%B %d, %Y" }}
-{% endfor %}
