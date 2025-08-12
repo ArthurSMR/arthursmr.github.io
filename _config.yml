@@ -16,6 +16,7 @@ minima:
     - projects.md
     - blog.md
     - about.md
+  hide_site_feed_link: true
 
 github_username: ArthurSMR
 linkedin_username: arthursmr17

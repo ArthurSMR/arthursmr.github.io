@@ -8,9 +8,7 @@ permalink: /about/
 
 I'm Arthur Rodrigues, an iOS engineer with 5+ years building mobile products for banking, media and security. I moved to Malta and currently focus on scalable iOS architectures, payments integration and observability.
 
-## Quick facts
-- 🇧🇷 Based in Malta.  
-- 📧 arthursmr17@gmail.com • [LinkedIn](https://www.linkedin.com/in/arthursmr17/) • [GitHub](https://github.com/ArthurSMR)
+- 🇧🇷 Based in Malta.
 
 ## Selected achievements
 - Helped redesign the payment flow at a major bank, improving CI/CD velocity and reliability.  
