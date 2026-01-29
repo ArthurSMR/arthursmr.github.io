@@ -1,149 +1,213 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Política de Privacidade | Itaro</title>
+    <title>Itaro - Travel Expenses Simplified</title>
     <style>
         :root {
-            --primary-color: #333;
-            --text-color: #555;
-            --bg-color: #f9f9f9;
-            --card-bg: #ffffff;
-            --accent-color: #007AFF; /* iOS Blue style */
+            --app-accent: #3AAEB6;
+            /* Itaro Teal */
+            --app-sand: #DBC296;
+            /* Itaro Sand */
+            --bg-light: #FAF8F4;
+            --text-primary: #1C1C1E;
+            --text-secondary: #666666;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--bg-color);
             margin: 0;
-            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-primary);
+            overflow-x: hidden;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
+        /* Atmosphere Background Animation */
+        .atmosphere {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.15;
+            animation: float 10s infinite ease-in-out;
+        }
+
+        .orb-teal {
+            width: 400px;
+            height: 400px;
+            background: var(--app-accent);
+            top: -100px;
+            left: -100px;
+        }
+
+        .orb-sand {
+            width: 350px;
+            height: 350px;
+            background: var(--app-sand);
+            bottom: -50px;
+            right: -50px;
+            animation-delay: 2s;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translate(0, 0);
+            }
+
+            50% {
+                transform: translate(20px, 30px);
+            }
+        }
+
+        /* Container */
         .container {
             max-width: 800px;
-            margin: 40px 20px;
-            background: var(--card-bg);
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
         h1 {
-            color: var(--primary-color);
-            border-bottom: 2px solid #eee;
-            padding-bottom: 10px;
-            margin-top: 0;
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--app-accent), #2A8A91);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        h2 {
-            color: var(--primary-color);
-            margin-top: 30px;
+        p.subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin-bottom: 2.5rem;
+            line-height: 1.5;
         }
 
-        h3 {
-            color: var(--primary-color);
-            font-size: 1.1em;
-            margin-top: 25px;
+        .app-icon {
+            width: 120px;
+            height: 120px;
+            border-radius: 28px;
+            box-shadow: 0 10px 30px rgba(58, 174, 182, 0.2);
+            margin-bottom: 2rem;
+            background: white;
+            /* Placeholder if image missing */
         }
 
-        ul {
-            padding-left: 20px;
+        .btn {
+            display: inline-block;
+            background-color: var(--app-accent);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 100px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 15px rgba(58, 174, 182, 0.3);
         }
 
-        li {
-            margin-bottom: 8px;
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(58, 174, 182, 0.4);
         }
 
-        .meta {
-            font-size: 0.9em;
-            color: #888;
-            margin-bottom: 30px;
+        /* Privacy Section for simple toggle */
+        .privacy-content {
+            display: none;
+            text-align: left;
+            margin-top: 40px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 30px;
+            border-radius: 20px;
+            backdrop-filter: blur(20px);
         }
 
-        .footer {
-            margin-top: 50px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
+        .privacy-content:target {
+            display: block;
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 20px;
             text-align: center;
-            font-size: 0.9em;
-            color: #aaa;
-        }
-        
-        .footer strong {
-            color: #888;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
         }
 
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --primary-color: #fff;
-                --text-color: #ccc;
-                --bg-color: #1a1a1a;
-                --card-bg: #2c2c2c;
-            }
-            h1 { border-bottom-color: #444; }
-            .footer { border-top-color: #444; }
+        footer a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
+
 <body>
-
-<div class="container">
-    <h1>Política de Privacidade do Itaro</h1>
-    <div class="meta">Última atualização: 29 de Janeiro de 2026</div>
-
-    <p>A sua privacidade é importante para nós. É política do <strong>Itaro</strong> respeitar a sua privacidade em relação a qualquer informação que possamos coletar no aplicativo Itaro.</p>
-
-    <h2>1. Informações que coletamos</h2>
-
-    <h3>1.1. Cadastro e Perfil</h3>
-    <p>Quando você se cadastra no Itaro via Apple ou Google, coletamos apenas:</p>
-    <ul>
-        <li><strong>Nome</strong>: Para identificar você nos grupos de viagem.</li>
-        <li><strong>Email</strong>: Para autenticação e recuperação de conta.</li>
-        <li><strong>Foto de Perfil</strong>: Opcional, para facilitar a identificação visual.</li>
-    </ul>
-
-    <h3>1.2. Dados de Viagens</h3>
-    <p>Coletamos os dados que você insere voluntariamente no app:</p>
-    <ul>
-        <li>Nomes das viagens e destinos.</li>
-        <li>Detalhes de despesas (valor, quem pagou, descrição).</li>
-        <li>Participantes dos grupos.</li>
-    </ul>
-
-    <h2>2. Como usamos suas informações</h2>
-    <p>Usamos seus dados exclusivamente para:</p>
-    <ul>
-        <li>Fornecer o serviço de divisão de despesas.</li>
-        <li>Sincronizar seus dados entre seus dispositivos.</li>
-        <li>Permitir que você compartilhe viagens com amigos.</li>
-    </ul>
-    <p><strong>Não vendemos nem compartilhamos seus dados pessoais com terceiros para fins de marketing.</strong></p>
-
-    <h2>3. Segurança</h2>
-    <p>Armazenamos suas informações em servidores seguros (Google Firebase) e empregamos medidas comercialmente aceitáveis para evitar perdas e roubos, bem como acesso, divulgação, cópia, uso ou modificação não autorizados.</p>
-
-    <h2>4. Exclusão de Dados</h2>
-    <p>Você pode solicitar a exclusão da sua conta e de todos os seus dados diretamente pelo aplicativo:</p>
-    <ol>
-        <li>Vá em <strong>Perfil</strong>.</li>
-        <li>Desça até a seção "Conta".</li>
-        <li>Toque em <strong>Excluir Conta</strong>.</li>
-    </ol>
-    <p>Essa ação é irreversível e remove todos os seus dados dos nossos servidores imediatamente.</p>
-
-    <h2>5. Contato</h2>
-    <p>Se você tiver dúvidas sobre como lidamos com dados do usuário e informações pessoais, entre em contato conosco através de nosso suporte no app.</p>
-
-    <div class="footer">
-        <p><strong>Itaro</strong> - Viaje mais, preocupe-se menos.</p>
+    <div class="atmosphere">
+        <div class="orb orb-teal"></div>
+        <div class="orb orb-sand"></div>
     </div>
-</div>
+    <div class="container" id="home">
+        <!-- Replace src with your icon file -->
+        <img src="app-icon.png" alt="Itaro Icon" class="app-icon">
 
+        <h1>Itaro</h1>
+        <p class="subtitle">Split expenses, keep friends. The easiest way to manage travel costs in multiple currencies.
+        </p>
+
+        <a href="#" class="btn">Coming Soon to App Store</a>
+        <!-- Privacy Policy Content (Hidden by default, shown via anchor) -->
+        <div id="privacy" class="privacy-content">
+            <h2>Privacy Policy</h2>
+            <p><strong>Last Updated: January 29, 2026</strong></p>
+            <p>Your privacy is important to us. It is Itaro's policy to respect your privacy regarding any information
+                we may collect from you across our application.</p>
+
+            <h3>1. Information We Collect</h3>
+            <p>We only collect information necessary to provide our service:</p>
+            <ul>
+                <li><strong>Profile</strong>: Name and Email (for authentication).</li>
+                <li><strong>Trips</strong>: Trip names, participants, and expense details you enter.</li>
+            </ul>
+            <h3>2. How We Use Your Information</h3>
+            <p>To calculate expense splits, sync data across devices, and allow you to share trips with friends.</p>
+            <h3>3. Data Deletion</h3>
+            <p>You can delete your account and all data instantly via the app: <em>Profile > Account > Delete
+                    Account</em>.</p>
+
+            <a href="#" class="btn" style="background: #eee; color: #333; margin-top: 20px;">Back to Home</a>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2026 ArthurSMR. All rights reserved.</p>
+        <p><a href="#privacy">Privacy Policy</a> • <a href="mailto:support@itaro.app">Support</a></p>
+    </footer>
 </body>
+
 </html>
