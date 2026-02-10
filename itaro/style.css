@@ -266,45 +266,133 @@ nav {
 .showcase {
     padding: 60px 0 100px;
     text-align: center;
-    overflow: hidden;
 }
 
 .showcase-scroller {
     display: flex;
-    gap: 16px;
-    /* Closer gap for panoramic feel */
-    padding: 40px 20px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    justify-content: flex-start;
-    /* Start from left to keep order */
+    flex-wrap: wrap;
+    gap: 40px;
+    /* Gap between items */
+    justify-content: center;
+    padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-/* Spacer to center the content when there are few items, 
-   but allow scrolling left-aligned. 
-   css-tricks for "can center, but scroll if overflow": margin: auto */
+/* Spacer removal */
 .showcase-scroller::after {
-    content: '';
-    flex: 0 0 20px;
-    /* Right padding */
+    display: none;
 }
 
 .phone-mockup {
-    flex: 0 0 auto;
-    /* Height constraint to keep them uniform */
-    height: 600px;
-    width: auto;
+    /* Force 3 items per row: (100% - (2 * gap)) / 3 */
+    /* calc(33.333% - 27px) approx */
+    flex: 0 0 calc(33.333% - 27px);
+    max-width: 350px;
+    /* Don't get too huge */
+    height: auto;
+    aspect-ratio: 9/19.5;
+    /* Maintain phone aspect ratio */
     background: transparent;
-    border-radius: 0;
-    /* Let image decide, or small radius */
     border: none;
-    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.4);
     position: relative;
-    overflow: visible;
-    /* Allow shadows from image if any */
-    scroll-snap-align: center;
+    overflow: hidden;
     transition: transform 0.3s ease;
+    border-radius: 20px;
+}
+
+.phone-mockup:hover {
+    transform: translateY(-10px) scale(1.02);
+    z-index: 10;
+}
+
+.phone-mockup img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    display: block;
+}
+
+/* Remove panorama group content if it exists in CSS */
+.panorama-group {
+    display: contents;
+    /* Just in case html wasn't fully updated, treating as transparent */
+}
+
+/* Specific tweak for the first 3 images to look connected (Panorama Row) */
+.phone-mockup:nth-child(1),
+.phone-mockup:nth-child(2),
+.phone-mockup:nth-child(3) {
+    border-radius: 0;
+    /* Connect them */
+    margin-right: -40px;
+    /* Pull them together to overlap the gap */
+    /* We need to override the flex-basis slightly to account for the removed gap? 
+       Actually, simplistic approach: just zero radius on connected sides. 
+       If we want them TOUCHING, we need gap:0 for that row.
+       Let's stick to the grid request: "fileiras de 3 em 3".
+       If they want the panorama effect ONLY on the first row, we need specific targeting.
+    */
+}
+
+/* Refined Panorama Logic for Row 1 */
+/* First Item: Round Left only */
+.phone-mockup:nth-child(1) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-right: -40px;
+    /* Negate the gap */
+    z-index: 1;
+    clip-path: inset(0 -1px 0 0);
+    /* Avoid hairline cracks */
+}
+
+/* Middle Item: Square */
+.phone-mockup:nth-child(2) {
+    border-radius: 0;
+    margin-right: -40px;
+    z-index: 2;
+    /* overlap? */
+    clip-path: inset(0 -1px 0 -1px);
+}
+
+/* Third Item: Round Right only */
+.phone-mockup:nth-child(3) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    z-index: 1;
+    clip-path: inset(0 0 0 -1px);
+}
+
+/* Row 2 (4, 5, 6) - Standard rounded cards */
+.phone-mockup:nth-child(n+4) {
+    border-radius: 20px;
+    /* margin-top: 20px; handled by row gap? flex gap handles it */
+}
+
+/* Responsive: Horizontal scroll on mobile */
+@media (max-width: 1024px) {
+    .showcase-scroller {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 20px;
+        padding-bottom: 40px;
+    }
+
+    .phone-mockup {
+        flex: 0 0 auto;
+        width: 260px;
+        max-width: none;
+        margin-right: 0 !important;
+        /* Reset nav margin tweaks */
+        border-radius: 20px !important;
+        /* Reset panorama tweaks */
+        clip-path: none !important;
+    }
 }
 
 .phone-mockup:hover {
