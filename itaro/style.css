@@ -1,0 +1,443 @@
+/* Itaro Premium Landing Page Styles */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    /* Core Palette extracted from App */
+    --itaro-teal: #40E0D0;
+    /* Bright Teal/Turquoise */
+    --itaro-teal-dark: #2A8A91;
+    --itaro-sand: #DBC296;
+    --itaro-dark-bg: #0A0A0A;
+    --itaro-card-bg: #1C1C1E;
+    /* Apple Dark Mode Gray */
+    --itaro-surface: #2C2C2E;
+
+    /* Text Colors */
+    --text-primary: #FFFFFF;
+    --text-secondary: #8E8E93;
+    --text-accent: var(--itaro-teal);
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, var(--itaro-teal) 0%, #2A8A91 100%);
+    --gradient-dark: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
+
+    /* Spacing */
+    --container-width: 1200px;
+    --border-radius-lg: 32px;
+    --border-radius-md: 20px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--itaro-dark-bg);
+    color: var(--text-primary);
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.5;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* --- Atmosphere & Background --- */
+.atmosphere {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.15;
+    animation: float 20s infinite ease-in-out alternate;
+}
+
+.orb-1 {
+    width: 600px;
+    height: 600px;
+    background: var(--itaro-teal);
+    top: -200px;
+    left: -100px;
+}
+
+.orb-2 {
+    width: 500px;
+    height: 500px;
+    background: #6366f1;
+    /* Indigo accent for depth */
+    bottom: -100px;
+    right: -100px;
+    animation-delay: -5s;
+}
+
+@keyframes float {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    100% {
+        transform: translate(50px, 30px) scale(1.1);
+    }
+}
+
+/* --- Typography --- */
+h1,
+h2,
+h3 {
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+h1 {
+    font-size: 4rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(to right, #fff, #a5b4fc);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+p {
+    color: var(--text-secondary);
+    font-size: 1.125rem;
+}
+
+a {
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+/* --- Layout --- */
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 24px;
+    position: relative;
+}
+
+/* --- Navigation --- */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.logo img {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+}
+
+.nav-links a {
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: var(--text-primary);
+}
+
+/* --- Hero Section --- */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 80px 0 60px;
+    position: relative;
+}
+
+.hero-content {
+    max-width: 800px;
+    z-index: 10;
+}
+
+.app-icon-lg {
+    width: 128px;
+    height: 128px;
+    border-radius: 32px;
+    margin-bottom: 32px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hero p.subtitle {
+    max-width: 600px;
+    margin: 0 auto 40px;
+    font-size: 1.25rem;
+    line-height: 1.6;
+}
+
+/* --- App Store Button --- */
+.app-store-btn {
+    display: inline-block;
+}
+
+.app-store-btn img {
+    height: 56px;
+    transition: transform 0.2s ease;
+}
+
+.app-store-btn:hover img {
+    transform: translateY(-2px);
+}
+
+/* --- Features Grid --- */
+.features {
+    padding: 80px 0;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-top: 40px;
+}
+
+.feature-card {
+    background: var(--itaro-card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: var(--border-radius-md);
+    padding: 32px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(64, 224, 208, 0.3);
+    /* Teal glow */
+}
+
+.feature-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(64, 224, 208, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    color: var(--itaro-teal);
+    font-size: 1.5rem;
+}
+
+.feature-card h3 {
+    margin-bottom: 12px;
+    font-size: 1.25rem;
+}
+
+.feature-card p {
+    font-size: 1rem;
+    color: var(--text-secondary);
+}
+
+/* --- Screenshots Showcase --- */
+.showcase {
+    padding: 60px 0 100px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.showcase-scroller {
+    display: flex;
+    gap: 16px;
+    /* Closer gap for panoramic feel */
+    padding: 40px 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    justify-content: flex-start;
+    /* Start from left to keep order */
+}
+
+/* Spacer to center the content when there are few items, 
+   but allow scrolling left-aligned. 
+   css-tricks for "can center, but scroll if overflow": margin: auto */
+.showcase-scroller::after {
+    content: '';
+    flex: 0 0 20px;
+    /* Right padding */
+}
+
+.phone-mockup {
+    flex: 0 0 auto;
+    /* Height constraint to keep them uniform */
+    height: 600px;
+    width: auto;
+    background: transparent;
+    border-radius: 0;
+    /* Let image decide, or small radius */
+    border: none;
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: visible;
+    /* Allow shadows from image if any */
+    scroll-snap-align: center;
+    transition: transform 0.3s ease;
+}
+
+.phone-mockup:hover {
+    transform: translateY(-10px);
+    z-index: 10;
+}
+
+.phone-mockup img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    border-radius: 32px;
+    /* App Store style radius */
+}
+
+/* Specific tweak for the first 3 images to look connected */
+.phone-mockup:nth-child(1),
+.phone-mockup:nth-child(2),
+.phone-mockup:nth-child(3) {
+    margin-right: -10px;
+    /* slight overlap or tighter gap */
+}
+
+/* Reset margin for the 3rd one so it doesn't pull the 4th */
+.phone-mockup:nth-child(3) {
+    margin-right: 20px;
+}
+
+/* Remove placeholders styles as we are using real images now */
+.mockup-placeholder {
+    display: none;
+}
+
+/* --- Footer --- */
+footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 60px 0;
+    margin-top: 60px;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.social-links {
+    display: flex;
+    gap: 24px;
+}
+
+.social-links a {
+    color: var(--text-secondary);
+    font-size: 1.5rem;
+    transition: color 0.2s;
+}
+
+.social-links a:hover {
+    color: var(--itaro-teal);
+}
+
+.legal-links {
+    display: flex;
+    gap: 24px;
+    font-size: 0.9rem;
+}
+
+.legal-links a {
+    color: var(--text-secondary);
+}
+
+.copyright {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-top: 24px;
+}
+
+/* Modal for Privacy Policy (Simple CSS Target) */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.modal:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-content {
+    background: var(--itaro-card-bg);
+    padding: 40px;
+    border-radius: 24px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: var(--text-secondary);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero {
+        padding: 40px 0;
+    }
+
+    .phone-mockup {
+        width: 260px;
+    }
+}

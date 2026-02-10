@@ -4,218 +4,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Itaro - Travel Expenses Simplified</title>
-    <style>
-        :root {
-            --app-accent: #3AAEB6;
-            /* Itaro Teal */
-            --app-sand: #DBC296;
-            /* Itaro Sand */
-            --bg-light: #FAF8F4;
-            --text-primary: #1C1C1E;
-            --text-secondary: #666666;
-        }
-
-        body {
-            margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-light);
-            color: var(--text-primary);
-            overflow-x: hidden;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        /* Atmosphere Background Animation */
-        .atmosphere {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            overflow: hidden;
-        }
-
-        .orb {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.15;
-            animation: float 10s infinite ease-in-out;
-        }
-
-        .orb-teal {
-            width: 400px;
-            height: 400px;
-            background: var(--app-accent);
-            top: -100px;
-            left: -100px;
-        }
-
-        .orb-sand {
-            width: 350px;
-            height: 350px;
-            background: var(--app-sand);
-            bottom: -50px;
-            right: -50px;
-            animation-delay: 2s;
-        }
-
-        @keyframes float {
-
-            0%,
-            100% {
-                transform: translate(0, 0);
-            }
-
-            50% {
-                transform: translate(20px, 30px);
-            }
-        }
-
-        /* Container */
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            text-align: center;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        h1 {
-            font-size: 3rem;
-            font-weight: 800;
-            margin-bottom: 0.5rem;
-            background: linear-gradient(135deg, var(--app-accent), #2A8A91);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        p.subtitle {
-            font-size: 1.25rem;
-            color: var(--text-secondary);
-            max-width: 600px;
-            margin-bottom: 2.5rem;
-            line-height: 1.5;
-        }
-
-        .app-icon {
-            width: 120px;
-            height: 120px;
-            border-radius: 28px;
-            box-shadow: 0 10px 30px rgba(58, 174, 182, 0.2);
-            margin-bottom: 2rem;
-            background: white;
-            /* Placeholder if image missing */
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: var(--app-accent);
-            color: white;
-            padding: 16px 32px;
-            border-radius: 100px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: transform 0.2s, box-shadow 0.2s;
-            box-shadow: 0 4px 15px rgba(58, 174, 182, 0.3);
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(58, 174, 182, 0.4);
-        }
-
-        /* Privacy Section for simple toggle */
-        .privacy-content {
-            display: none;
-            text-align: left;
-            margin-top: 40px;
-            background: rgba(255, 255, 255, 0.8);
-            padding: 30px;
-            border-radius: 20px;
-            backdrop-filter: blur(20px);
-        }
-
-        .privacy-content:target {
-            display: block;
-        }
-
-        footer {
-            margin-top: auto;
-            padding: 20px;
-            text-align: center;
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
-
-        footer a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <title>Itaro - Split Travel Expenses</title>
+    <meta name="description"
+        content="The easiest way to split travel expenses with friends. Works offline, handles multiple currencies, and keeps track of who owes what.">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="app-icon.png">
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
     <div class="atmosphere">
-        <div class="orb orb-teal"></div>
-        <div class="orb orb-sand"></div>
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
     </div>
-    <div class="container" id="home">
-        <!-- Replace src with your icon file -->
-        <img src="app-icon.png" alt="Itaro Icon" class="app-icon">
 
-        <h1>Itaro</h1>
-        <p class="subtitle">Split expenses, keep friends. The easiest way to manage travel costs in multiple currencies.
-        </p>
+    <div class="container">
+        <!-- Navigation -->
+        <nav>
+            <div class="logo">
+                <img src="app-icon.png" alt="Itaro Logo">
+                <span>Itaro</span>
+            </div>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#privacy">Privacy</a>
+                <a href="mailto:support@itaro.app">Support</a>
+            </div>
+        </nav>
 
-        <a href="#" class="btn">Coming Soon to App Store</a>
-        <!-- Privacy Policy Content (Hidden by default, shown via anchor) -->
-        <div id="privacy" class="privacy-content">
+        <!-- Hero Section -->
+        <header class="hero">
+            <div class="hero-content">
+                <img src="app-icon.png" alt="Itaro App Icon" class="app-icon-lg">
+                <h1>Split expenses,<br>keep friends.</h1>
+                <p class="subtitle">
+                    The easiest way to manage travel costs in multiple currencies.
+                    Works offline so you can explore without limits.
+                </p>
+                <a href="https://apps.apple.com/il/app/itaro-split-travel-expenses/id6758619878" class="app-store-btn"
+                    target="_blank">
+                    <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1706572800"
+                        alt="Download on the App Store">
+                </a>
+            </div>
+        </header>
+
+        <!-- Mockups Carousel -->
+        <section class="showcase">
+            <div class="showcase-scroller">
+                <!-- Screenshots 1-3 (Connected) -->
+                <div class="phone-mockup">
+                    <img src="1-en.png" alt="Itaro App Screenshot 1">
+                </div>
+                <div class="phone-mockup">
+                    <img src="2-en.png" alt="Itaro App Screenshot 2">
+                </div>
+                <div class="phone-mockup">
+                    <img src="3-en.png" alt="Itaro App Screenshot 3">
+                </div>
+                <!-- Remaining Screenshots -->
+                <div class="phone-mockup">
+                    <img src="4-en.png" alt="Itaro App Screenshot 4">
+                </div>
+                <div class="phone-mockup">
+                    <img src="5-en.png" alt="Itaro App Screenshot 5">
+                </div>
+                <div class="phone-mockup">
+                    <img src="6-en.png" alt="Itaro App Screenshot 6">
+                </div>
+                <div class="phone-mockup">
+                    <img src="7-en.png" alt="Itaro App Screenshot 7">
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Grid -->
+        <section id="features" class="features">
+            <div class="container">
+                <h2 style="text-align: center;">Why Itaro?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fa-solid fa-bolt"></i></div>
+                        <h3>Works Offline</h3>
+                        <p>No signal? No problem. Add expenses anywhere, sync when you're back online.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fa-solid fa-wallet"></i></div>
+                        <h3>Smart Balances</h3>
+                        <p>Instantly see who owes who. We simplify the math so you don't have to.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fa-solid fa-globe"></i></div>
+                        <h3>Multi-Currency</h3>
+                        <p>Spent Euros in Paris but want to settle in Dollars? We handle the conversion automatically.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fa-solid fa-list-check"></i></div>
+                        <h3>Checklists & Links</h3>
+                        <p>Shared packing lists and important travel links, all in one place for the whole group.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container footer-content">
+                <div class="social-links">
+                    <a href="https://instagram.com/itaro.app" target="_blank" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="mailto:support@itaro.app" aria-label="Email Support">
+                        <i class="fa-regular fa-envelope"></i>
+                    </a>
+                </div>
+                <div class="legal-links">
+                    <a href="#privacy">Privacy Policy</a>
+                    <a href="#">Terms of Use</a>
+                </div>
+                <p class="copyright">&copy; 2026 Itaro. Made with <i class="fa-solid fa-heart"
+                        style="color: var(--itaro-teal); font-size: 0.8em;"></i> for travelers.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Privacy Policy Modal -->
+    <div id="privacy" class="modal">
+        <div class="modal-content">
+            <a href="#" class="close-modal">&times;</a>
             <h2>Privacy Policy</h2>
-            <p><strong>Last Updated: January 29, 2026</strong></p>
-            <p>Your privacy is taken seriously at Itaro. This policy outlines how we secure and handle your data.</p>
+            <p style="margin-bottom: 20px; font-size: 0.9em; color: var(--text-secondary);">Last Updated: January 29,
+                2026</p>
 
             <h3>1. Data Collection & Storage</h3>
-            <p>We use <strong>Google Firebase</strong> to securely store and authenticate your data. We collect:</p>
-            <ul>
-                <li><strong>Account Info</strong>: Name and Email (for login and identifying you to friends).</li>
-                <li><strong>Trip Data</strong>: Expenses, balances, and partial definitions manually entered by you.
-                </li>
-            </ul>
+            <p>We use <strong>Google Firebase</strong> to securely store and authenticate your data. We collect Account
+                Info (Name, Email) and Trip Data (Expenses, Balances).</p>
 
-            <h3>2. Data Usage & Safety</h3>
-            <p>Your data is used solely to facilitate expense splitting and sync across devices.</p>
-            <p><strong>We do not sell your personal data to advertisers or third parties.</strong> All data is encrypted
-                in transit and at rest using industry-standard security infrastructure.</p>
+            <h3 style="margin-top: 20px;">2. Data Usage & Safety</h3>
+            <p>Your data is used solely to facilitate expense splitting and sync across devices. <strong>We do not sell
+                    your personal data.</strong></p>
 
-            <h3>3. Data Deletion</h3>
-            <p>You have full control. Permanently delete your account and all data instantly via the app: <em>Profile >
-                    Account > Delete Account</em>.</p>
+            <h3 style="margin-top: 20px;">3. Data Deletion</h3>
+            <p>You can delete your account and all data instantly via the app: <em>Profile > Account > Delete
+                    Account</em>.</p>
 
-            <h3>4. Contact Us</h3>
-            <p>If you have any questions, please contact us at <a href="mailto:support@itaro.app">support@itaro.app</a>.
-            </p>
-
-            <a href="#" class="btn" style="background: #eee; color: #333; margin-top: 20px;">Back to Home</a>
+            <h3 style="margin-top: 20px;">4. Contact Us</h3>
+            <p>Questions? Contact us at <a href="mailto:support@itaro.app"
+                    style="color: var(--itaro-teal);">support@itaro.app</a>.</p>
         </div>
     </div>
-    <footer>
-        <p>&copy; 2026 Itaro. All rights reserved.</p>
-        <p><a href="#privacy">Privacy Policy</a> • <a href="mailto:support@itaro.app">Support</a></p>
-    </footer>
 </body>
 
 </html>
