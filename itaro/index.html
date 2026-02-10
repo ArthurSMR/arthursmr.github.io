@@ -29,9 +29,14 @@
                 <span>Itaro</span>
             </div>
             <div class="nav-links">
-                <a href="#features">Features</a>
-                <a href="#privacy">Privacy</a>
-                <a href="https://instagram.com/itaro.app" target="_blank">Contact</a>
+                <a href="#features" data-i18n="features">Features</a>
+                <a href="#privacy" data-i18n="privacy">Privacy</a>
+                <a href="https://instagram.com/itaro.app" target="_blank" data-i18n="contact">Contact</a>
+                <div class="lang-switcher">
+                    <a href="#" class="lang-btn" data-lang="en">EN</a>
+                    <span class="divider">|</span>
+                    <a href="#" class="lang-btn" data-lang="pt">PT</a>
+                </div>
             </div>
         </nav>
 
@@ -39,8 +44,8 @@
         <header class="hero">
             <div class="hero-content">
                 <img src="app-icon.png" alt="Itaro App Icon" class="app-icon-lg">
-                <h1>Focus on the memories,<br>not the math.</h1>
-                <p class="subtitle">
+                <h1 data-i18n="hero_title">Focus on the memories,<br>not the math.</h1>
+                <p class="subtitle" data-i18n="hero_subtitle">
                     The easiest way to manage travel costs in multiple currencies.
                     Works offline so you can explore without limits.
                 </p>
@@ -80,28 +85,32 @@
         <!-- Features Grid -->
         <section id="features" class="features">
             <div class="container">
-                <h2 style="text-align: center;">Why Itaro?</h2>
+                <h2 style="text-align: center;" data-i18n="why_itaro">Why Itaro?</h2>
                 <div class="features-grid">
                     <div class="feature-card">
                         <div class="feature-icon"><i class="fa-solid fa-bolt"></i></div>
-                        <h3>Works Offline</h3>
-                        <p>No signal? No problem. Add expenses anywhere, sync when you're back online.</p>
+                        <h3 data-i18n="feat_offline_title">Works Offline</h3>
+                        <p data-i18n="feat_offline_desc">No signal? No problem. Add expenses anywhere, sync when you're
+                            back online.</p>
                     </div>
                     <div class="feature-card">
                         <div class="feature-icon"><i class="fa-solid fa-wallet"></i></div>
-                        <h3>Smart Balances</h3>
-                        <p>Instantly see who owes who. We simplify the math so you don't have to.</p>
+                        <h3 data-i18n="feat_balance_title">Smart Balances</h3>
+                        <p data-i18n="feat_balance_desc">Instantly see who owes who. We simplify the math so you don't
+                            have to.</p>
                     </div>
                     <div class="feature-card">
                         <div class="feature-icon"><i class="fa-solid fa-globe"></i></div>
-                        <h3>Multi-Currency</h3>
-                        <p>Spent Euros in Paris but want to settle in Dollars? We handle the conversion automatically.
+                        <h3 data-i18n="feat_currency_title">Multi-Currency</h3>
+                        <p data-i18n="feat_currency_desc">Spent Euros in Paris but want to settle in Dollars? We handle
+                            the conversion automatically.
                         </p>
                     </div>
                     <div class="feature-card">
                         <div class="feature-icon"><i class="fa-solid fa-list-check"></i></div>
-                        <h3>Checklists & Links</h3>
-                        <p>Shared packing lists and important travel links, all in one place for the whole group.</p>
+                        <h3 data-i18n="feat_checklist_title">Checklists & Links</h3>
+                        <p data-i18n="feat_checklist_desc">Shared packing lists and important travel links, all in one
+                            place for the whole group.</p>
                     </div>
                 </div>
             </div>
@@ -116,11 +125,12 @@
                     </a>
                 </div>
                 <div class="legal-links">
-                    <a href="#privacy">Privacy Policy</a>
+                    <a href="#privacy" data-i18n="privacy">Privacy Policy</a>
                     <a href="#">Terms of Use</a>
                 </div>
-                <p class="copyright">&copy; 2026 Itaro. Made with <i class="fa-solid fa-heart"
-                        style="color: var(--itaro-teal); font-size: 0.8em;"></i> for travelers.</p>
+                <p class="copyright" data-i18n="footer_copyright">&copy; 2026 Itaro. Made with <i
+                        class="fa-solid fa-heart" style="color: var(--itaro-teal); font-size: 0.8em;"></i> for
+                    travelers.</p>
             </div>
         </footer>
     </div>
@@ -129,27 +139,32 @@
     <div id="privacy" class="modal">
         <div class="modal-content">
             <a href="#" class="close-modal">&times;</a>
-            <h2>Privacy Policy</h2>
-            <p style="margin-bottom: 20px; font-size: 0.9em; color: var(--text-secondary);">Last Updated: January 29,
+            <h2 data-i18n="privacy_title">Privacy Policy</h2>
+            <p style="margin-bottom: 20px; font-size: 0.9em; color: var(--text-secondary);" data-i18n="privacy_updated">
+                Last Updated: January 29,
                 2026</p>
 
-            <h3>1. Data Collection & Storage</h3>
-            <p>We use <strong>Google Firebase</strong> to securely store and authenticate your data. We collect Account
+            <h3 data-i18n="privacy_1_title">1. Data Collection & Storage</h3>
+            <p data-i18n="privacy_1_desc">We use <strong>Google Firebase</strong> to securely store and authenticate
+                your data. We collect Account
                 Info (Name, Email) and Trip Data (Expenses, Balances).</p>
 
-            <h3 style="margin-top: 20px;">2. Data Usage & Safety</h3>
-            <p>Your data is used solely to facilitate expense splitting and sync across devices. <strong>We do not sell
+            <h3 style="margin-top: 20px;" data-i18n="privacy_2_title">2. Data Usage & Safety</h3>
+            <p data-i18n="privacy_2_desc">Your data is used solely to facilitate expense splitting and sync across
+                devices. <strong>We do not sell
                     your personal data.</strong></p>
 
-            <h3 style="margin-top: 20px;">3. Data Deletion</h3>
-            <p>You can delete your account and all data instantly via the app: <em>Profile > Account > Delete
+            <h3 style="margin-top: 20px;" data-i18n="privacy_3_title">3. Data Deletion</h3>
+            <p data-i18n="privacy_3_desc">You can delete your account and all data instantly via the app: <em>Profile >
+                    Account > Delete
                     Account</em>.</p>
 
-            <h3 style="margin-top: 20px;">4. Contact Us</h3>
-            <p>Questions? DM us on Instagram at <a href="https://instagram.com/itaro.app" target="_blank"
-                    style="color: var(--itaro-teal);">@itaro.app</a>.</p>
+            <h3 style="margin-top: 20px;" data-i18n="privacy_4_title">4. Contact Us</h3>
+            <p data-i18n="privacy_4_desc">Questions? DM us on Instagram at <a href="https://instagram.com/itaro.app"
+                    target="_blank" style="color: var(--itaro-teal);">@itaro.app</a>.</p>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 
 </html>
