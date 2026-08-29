@@ -179,7 +179,7 @@ main > section:not(.hero) > .container { transform: translate3d(0, var(--story-l
 .product-visual img { display: block; width: 100%; height: 100%; object-fit: contain; object-position: center; filter: saturate(.82) contrast(1.06); mix-blend-mode: screen; }
 .product-visual[data-product-visual="laser"] img { mix-blend-mode: normal; filter: saturate(.76) contrast(1.08) brightness(.93); }
 .product-visual[data-product-visual="ozone"] img { max-width: 72%; filter: saturate(.72) contrast(1.08) brightness(.82); }
-.stage-label { position: absolute; left: 15px; top: 8px; color: rgba(183,225,255,.75); font-family: var(--mono); font-size: 9px; letter-spacing: .14em; }
+.stage-label { position: absolute; z-index: 4; left: 29px; top: 26px; padding: 6px 9px 6px 10px; border-left: 1px solid rgba(183,225,255,.72); background: rgba(6,21,33,.68); color: rgba(183,225,255,.86); font-family: var(--mono); font-size: 10px; letter-spacing: .14em; line-height: 1; }
 .stage-readout { position: absolute; z-index: 4; left: 30px; right: 30px; bottom: 26px; display: flex; align-items: center; gap: 12px; color: rgba(241,243,241,.56); font-family: var(--mono); font-size: 9px; letter-spacing: .12em; }
 .stage-readout span { color: var(--blue); }.stage-readout b { color: var(--paper); font-weight: 400; }.stage-readout i { flex: 1; height: 1px; background: rgba(183,225,255,.32); }
 .product-chapters { position: relative; z-index: 2; }
@@ -374,7 +374,7 @@ main > section:not(.hero) > .container { transform: translate3d(0, var(--story-l
   .chapter-mobile-visual:before { left: 16px; top: 16px; border-left: 1px solid; border-top: 1px solid; }
   .chapter-mobile-visual:after { right: 16px; bottom: 16px; border-right: 1px solid; border-bottom: 1px solid; }
   .chapter-mobile-visual > img { display: block; width: 100%; height: 315px; padding: 24px 18px 66px; object-fit: contain; object-position: center; filter: saturate(.82) contrast(1.07); }
-  .chapter-mobile-visual > span { position: absolute; z-index: 4; top: 16px; left: 18px; color: rgba(183,225,255,.8); font-family: var(--mono); font-size: 10px; letter-spacing: .13em; }
+  .chapter-mobile-visual > span { position: absolute; z-index: 4; top: 23px; left: 24px; padding: 6px 8px 6px 9px; border-left: 1px solid rgba(183,225,255,.72); background: rgba(6,21,33,.68); color: rgba(183,225,255,.86); font-family: var(--mono); font-size: 10px; letter-spacing: .13em; line-height: 1; }
   .chapter-mobile-specs { position: absolute; z-index: 4; right: 15px; bottom: 15px; left: 15px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid rgba(183,225,255,.3); }
   .chapter-mobile-specs div { display: flex; min-width: 0; flex-direction: column; gap: 5px; padding: 11px 9px 0 0; }
   .chapter-mobile-specs div + div { padding-left: 9px; border-left: 1px solid rgba(183,225,255,.2); }
