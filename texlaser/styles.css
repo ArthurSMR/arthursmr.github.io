@@ -400,3 +400,35 @@ main > section:not(.hero) > .container { transform: translate3d(0, var(--story-l
   .product-chapter h3 { font-size: 46px; }
   .chapter-copy { font-size: 16px; }
 }
+
+/* Section 06: concise editorial scale, with a clear breathing zone under the portrait. */
+.founder { padding: 118px 0 128px; }
+.founder-layout { gap: clamp(60px, 8vw, 112px); }
+.founder-copy h2 { max-width: 680px; font-size: clamp(48px, 5.2vw, 74px); line-height: 1; }
+.founder-copy .body-copy { max-width: 520px; margin-top: 24px; font-size: 15px; line-height: 1.65; }
+.founder-route { margin-top: 31px; padding-top: 17px; gap: 8px; }
+.founder-route span { font-size: 10px; }
+.founder-route strong { font-size: clamp(22px, 2.3vw, 31px); }
+.founder-route small { font-size: 11px; }
+.founder-orbit { inset: 4% 4% 23%; }
+.founder-caption { width: max-content; max-width: 100%; margin: 16px auto 0; padding: 0 11px; background: #eef1ef; }
+
+@media (max-width: 900px) {
+  .founder { padding: 92px 0 104px; }
+  .founder-layout { gap: 48px; }
+  .founder-copy h2 { max-width: 640px; font-size: clamp(45px, 8vw, 64px); }
+  .founder-copy .body-copy { max-width: 570px; }
+  .founder-portrait-wrap { width: min(100%, 360px); }
+}
+
+@media (max-width: 640px) {
+  .founder { padding: 78px 0 92px; }
+  .founder-layout { gap: 42px; }
+  .founder-copy h2 { font-size: clamp(42px, 11.6vw, 54px); line-height: 1.01; }
+  .founder-copy .body-copy { margin-top: 20px; font-size: 15px; line-height: 1.65; }
+  .founder-route { margin-top: 27px; }
+  .founder-route strong { font-size: 24px; }
+  .founder-route small { font-size: 11px; line-height: 1.45; }
+  .founder-portrait-wrap { width: min(100%, 318px); }
+  .founder-caption { margin-top: 13px; font-size: 10px; }
+}
