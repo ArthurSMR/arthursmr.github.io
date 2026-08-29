@@ -1,3 +1,38 @@
+const languageSelect = document.querySelector('[data-language-select]');
+const supportedLanguages = ['pt-BR', 'en', 'es'];
+const getValue = (source, path) => path.split('.').reduce((value, key) => value?.[key], source);
+const getPreferredLanguage = () => {
+  let saved = null;
+  try { saved = window.localStorage.getItem('texlaser-language'); } catch (error) { /* Storage may be unavailable in privacy-restricted contexts. */ }
+  if (supportedLanguages.includes(saved)) return saved;
+  const browserLanguage = (navigator.language || 'pt-BR').toLowerCase();
+  return browserLanguage.startsWith('en') ? 'en' : browserLanguage.startsWith('es') ? 'es' : 'pt-BR';
+};
+
+const applyLanguage = (language) => {
+  const locale = window.TEXLASER_LOCALES?.[language] || window.TEXLASER_LOCALES['pt-BR'];
+  document.documentElement.lang = language;
+  document.querySelectorAll('[data-i18n]').forEach((element) => {
+    const value = getValue(locale, element.dataset.i18n);
+    if (value !== undefined) element.innerHTML = value;
+  });
+  document.querySelectorAll('[data-i18n-attr]').forEach((element) => {
+    element.dataset.i18nAttr.split('|').forEach((attributePair) => {
+      const [attribute, key] = attributePair.split(':');
+      const value = getValue(locale, key);
+      if (value !== undefined) element.setAttribute(attribute, value);
+    });
+  });
+  document.title = getValue(locale, 'meta.title');
+  document.querySelector('meta[name="description"]')?.setAttribute('content', getValue(locale, 'meta.description'));
+  if (languageSelect) languageSelect.value = language;
+  try { window.localStorage.setItem('texlaser-language', language); } catch (error) { /* Keep the selected language for the current page when storage is unavailable. */ }
+  window.dispatchEvent(new CustomEvent('texlaser:language-change', { detail: { language, locale } }));
+};
+
+languageSelect?.addEventListener('change', (event) => applyLanguage(event.target.value));
+applyLanguage(getPreferredLanguage());
+
 const header = document.querySelector('[data-header]');
 const menuToggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.site-nav');
@@ -44,7 +79,7 @@ if (processLine) observer.observe(processLine);
 const activateProduct = (product) => {
   productVisuals.forEach((visual) => visual.classList.toggle('is-active', visual.dataset.productVisual === product));
   productChapters.forEach((chapter) => chapter.classList.toggle('is-active', chapter.dataset.productChapter === product));
-  if (stageReadout) stageReadout.textContent = product === 'ozone' ? 'OZÔNIO / INDUSTRIAL' : 'LASER / TEXTILE';
+  if (stageReadout) stageReadout.textContent = product === 'ozone' ? (document.documentElement.lang === 'en' ? 'OZONE / INDUSTRIAL' : document.documentElement.lang === 'es' ? 'OZONO / INDUSTRIAL' : 'OZÔNIO / INDUSTRIAL') : 'LASER / TEXTILE';
 };
 
 const productObserver = new IntersectionObserver((entries) => {
@@ -112,7 +147,8 @@ requestScrollEffects();
 
 contactForm?.addEventListener('submit', (event) => {
   event.preventDefault();
-  formNote.textContent = 'Mensagem registrada nesta demonstração.';
+  const locale = window.TEXLASER_LOCALES?.[document.documentElement.lang] || window.TEXLASER_LOCALES['pt-BR'];
+  formNote.innerHTML = getValue(locale, 'form.success');
   formNote.style.color = '#b7e1ff';
   contactForm.reset();
 });
