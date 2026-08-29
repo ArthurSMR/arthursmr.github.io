@@ -357,3 +357,46 @@ main > section:not(.hero) > .container { transform: translate3d(0, var(--story-l
   .applications-content p { font-size: 16px; }
   .application-list span { font-size: 15px; }
 }
+
+/* Mobile product chapters: keep each real machine beside its essential data. */
+.chapter-mobile-visual { display: none; }
+
+@media (max-width: 900px) {
+  .product-showcase > .container { transform: none !important; }
+  .product-stage-wrap { display: none; }
+  .product-showcase-grid { display: block; }
+  .product-chapters { width: 100%; }
+  .product-chapter,
+  .product-chapter.is-active { min-height: 0; padding: 48px 0 76px; opacity: 1; transform: none; }
+  .product-chapter + .product-chapter { border-top: 1px solid rgba(241,243,241,.2); }
+  .chapter-mobile-visual { display: block; position: relative; min-height: 315px; margin-bottom: 46px; overflow: hidden; background: radial-gradient(circle at 50% 35%, rgba(58,152,214,.22), transparent 38%), linear-gradient(145deg, #0b2636, #030b12 75%); border: 1px solid rgba(183,225,255,.27); box-shadow: inset 0 0 0 10px rgba(3,11,18,.18); }
+  .chapter-mobile-visual:before, .chapter-mobile-visual:after { content: ""; position: absolute; z-index: 3; width: 22px; height: 22px; border-color: rgba(183,225,255,.65); pointer-events: none; }
+  .chapter-mobile-visual:before { left: 16px; top: 16px; border-left: 1px solid; border-top: 1px solid; }
+  .chapter-mobile-visual:after { right: 16px; bottom: 16px; border-right: 1px solid; border-bottom: 1px solid; }
+  .chapter-mobile-visual > img { display: block; width: 100%; height: 315px; padding: 24px 18px 66px; object-fit: contain; object-position: center; filter: saturate(.82) contrast(1.07); }
+  .chapter-mobile-visual > span { position: absolute; z-index: 4; top: 16px; left: 18px; color: rgba(183,225,255,.8); font-family: var(--mono); font-size: 10px; letter-spacing: .13em; }
+  .chapter-mobile-specs { position: absolute; z-index: 4; right: 15px; bottom: 15px; left: 15px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid rgba(183,225,255,.3); }
+  .chapter-mobile-specs div { display: flex; min-width: 0; flex-direction: column; gap: 5px; padding: 11px 9px 0 0; }
+  .chapter-mobile-specs div + div { padding-left: 9px; border-left: 1px solid rgba(183,225,255,.2); }
+  .chapter-mobile-specs strong { color: var(--paper); font-size: 11px; font-weight: 700; line-height: 1.25; }
+  .chapter-mobile-specs small { color: rgba(241,243,241,.64); font-family: var(--mono); font-size: 9px; letter-spacing: .04em; line-height: 1.25; text-transform: uppercase; }
+  .product-chapter .chapter-index { margin-bottom: 29px; }
+  .product-chapter h3 { font-size: clamp(43px, 12vw, 58px); }
+  .chapter-copy { max-width: 500px; margin: 24px 0 34px; font-size: 16px; line-height: 1.65; }
+  .chapter-note { margin-top: 16px; font-size: 11px; line-height: 1.45; }
+}
+
+@media (max-width: 640px) {
+  .product-showcase-intro .section-lead { font-size: 15px; line-height: 1.6; }
+  .chapter-mobile-visual { min-height: 298px; margin-bottom: 40px; }
+  .chapter-mobile-visual > img { height: 298px; padding: 23px 13px 63px; }
+  .chapter-mobile-specs { right: 12px; bottom: 13px; left: 12px; }
+  .chapter-mobile-specs div { padding-top: 10px; }
+  .chapter-mobile-specs div + div { padding-left: 7px; }
+  .chapter-mobile-specs strong { font-size: 10px; }
+  .chapter-mobile-specs small { font-size: 8px; }
+  .product-chapter,
+  .product-chapter.is-active { padding: 42px 0 70px; }
+  .product-chapter h3 { font-size: 46px; }
+  .chapter-copy { font-size: 16px; }
+}
