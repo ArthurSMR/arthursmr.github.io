@@ -39,7 +39,7 @@ button { cursor: pointer; }
 .menu-toggle { display: none; }
 
 .hero { min-height: 100svh; position: relative; overflow: hidden; display: flex; align-items: center; padding-top: 32px; }
-.hero-media { position: absolute; inset: 0; background-image: url("assets/factory-line.png"); background-size: cover; background-position: center; filter: saturate(.72) contrast(1.08); transform: scale(1.04); animation: hero-breathe 16s ease-in-out infinite alternate; }
+.hero-media { position: absolute; inset: 0; background-image: url("assets/ozoclean-control.png"); background-size: cover; background-position: center; filter: saturate(.72) contrast(1.08); transform: scale(1.04); animation: hero-breathe 16s ease-in-out infinite alternate; }
 .hero-overlay { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(5,16,25,.98) 0%, rgba(5,16,25,.82) 34%, rgba(5,16,25,.22) 72%, rgba(5,16,25,.7) 100%), linear-gradient(0deg, rgba(7,21,33,.78), transparent 35%); }
 .hero-grid { position: absolute; inset: 0; opacity: .16; background-image: linear-gradient(rgba(175,221,255,.18) 1px, transparent 1px), linear-gradient(90deg, rgba(175,221,255,.18) 1px, transparent 1px); background-size: 72px 72px; mask-image: linear-gradient(90deg, black 0%, transparent 55%); }
 .hero-content { padding-top: 48px; }.eyebrow, .section-label, .kicker, .mono-tag, .solution-type, .solution-tags, .hero-note, .hero-scroll, .status-dot, .spec-caption, .footer-bottom { font-family: var(--mono); text-transform: uppercase; letter-spacing: .1em; }.eyebrow { display: flex; align-items: center; gap: 12px; color: var(--blue); font-size: 10px; font-weight: 500; animation: rise-in .8s .1s both; }.eyebrow-line { display: inline-block; width: 32px; height: 1px; background: var(--blue); }.eyebrow-country { color: rgba(241,243,241,.54); margin-left: 10px; }
@@ -70,7 +70,7 @@ h1 { max-width: 770px; margin: 26px 0 21px; font-size: clamp(56px, 8vw, 112px); 
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; }.hero-media, .pulse-dot, .spec-visual:after, .orbital-core { animation: none; }.reveal { opacity: 1; transform: none; transition: none; } }
 
 /* Project assets: real installation and machine photography supplied for Texlaser. */
-.hero-media { background-image: url("assets/factory-line.png"); }
+.hero-media { background-image: url("assets/ozoclean-control.png"); }
 .spec-visual { background: #e5e9e7; }
 .machine-photo { width: 100%; height: 100%; object-fit: contain; object-position: center; mix-blend-mode: multiply; position: relative; z-index: 2; padding: 8px 18px 3px; }
 .machine-silhouette, .beam, .fabric-strip { display: none; }
@@ -82,16 +82,19 @@ h1 { max-width: 770px; margin: 26px 0 21px; font-size: clamp(56px, 8vw, 112px); 
 .industrial-image img { display: block; width: 100%; height: 480px; object-fit: cover; object-position: center; filter: saturate(.7) contrast(1.08); transform: scale(1.015); transition: transform .8s ease, filter .5s ease; }
 .industrial-image figcaption { position: absolute; z-index: 2; left: 26px; bottom: 23px; color: rgba(241,243,241,.78); font-family: var(--mono); font-size: 8px; letter-spacing: .12em; }
 .industrial-image:hover img { filter: saturate(.92) contrast(1.08); transform: scale(1.045); }
+.industrial-image.laser-image:after { content: "LASER"; }
+.industrial-image.laser-image { min-height: 0; aspect-ratio: 1.15 / 1; background: #071521; }
+.industrial-image.laser-image img { height: 100%; object-fit: contain; object-position: center; filter: saturate(.78) contrast(1.08); }
 
 @media (max-width: 900px) {
-  .industrial-image { min-height: 430px; width: min(100%, 520px); }
-  .industrial-image img { height: 430px; }
+  .industrial-image { min-height: 0; width: min(100%, 520px); }
+  .industrial-image img { height: 100%; }
 }
 
 @media (max-width: 640px) {
   .machine-photo { padding: 7px 10px 0; }
   .spec-visual { height: 310px; }
-  .industrial-image { min-height: 430px; box-shadow: 10px 10px 0 rgba(7,21,33,.12); }
+  .industrial-image { min-height: 0; box-shadow: 10px 10px 0 rgba(7,21,33,.12); }
   .industrial-image:before { inset: 10px; }
   .industrial-image img { height: 430px; object-position: center; }
   .industrial-image figcaption { left: 20px; bottom: 19px; }
@@ -140,6 +143,7 @@ main > section:not(.hero) > .container { transform: translate3d(0, var(--story-l
   .application-list span { font-size: 11px; }
   .spec-visual { height: 360px; }
   .machine-photo { padding: 10px 11px 16px; }
+  .industrial-image.laser-image img { height: 100%; }
   .spec-grid span { font-size: 12px; }
   .solution-tags { font-size: 9px; }
 }
