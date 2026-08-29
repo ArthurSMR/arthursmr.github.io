@@ -27,6 +27,7 @@
 
       <nav id="site-nav" class="site-nav" aria-label="Navegação principal">
         <a href="#solucoes">Soluções</a>
+        <a href="#produtos">Máquinas</a>
         <a href="#aplicacoes">Aplicações</a>
         <a href="#processo">Como trabalhamos</a>
         <a href="#empresa">Empresa</a>
@@ -36,7 +37,7 @@
 
     <main id="top">
       <section class="hero section-dark">
-        <div class="hero-media" data-parallax="0.12" role="img" aria-label="Sistema industrial Ozoclean em ambiente de produção"></div>
+        <div class="hero-media" data-parallax="0.12" role="img" aria-label="Ambiente técnico para tecnologia industrial"></div>
         <div class="hero-overlay"></div>
         <div class="hero-grid"></div>
         <div class="container hero-content reveal">
@@ -100,34 +101,65 @@
         </div>
       </section>
 
-      <section class="feature section-light" id="aplicacoes">
-        <div class="container feature-layout">
-          <div class="feature-copy reveal">
-            <div class="section-label"><span>03</span> DESTAQUE TEXLASER</div>
-            <p class="kicker">Laser CO₂ para jeans e tecidos</p>
-            <h2>O detalhe que<br /><span>vira escala.</span></h2>
-            <p class="body-copy">Uma plataforma industrial para criar efeitos, marcar e transformar superfícies têxteis com precisão. Projetada para entrar no fluxo da produção e dar mais consistência ao resultado.</p>
-            <a class="dark-link" href="#contato">Falar sobre esta solução <span>↗</span></a>
+      <section class="product-showcase section-dark" id="produtos">
+        <div class="container product-showcase-intro reveal">
+          <div class="section-label light"><span>03</span> EQUIPAMENTOS</div>
+          <div>
+            <p class="kicker">Uma apresentação por dentro do processo</p>
+            <h2>Máquinas que entram<br /><em>na operação.</em></h2>
           </div>
-          <div class="machine-spec reveal">
-            <div class="machine-spec-top"><span class="mono-tag">TEXLASER / CO₂</span><span class="status-dot">● DISPONÍVEL PARA CONSULTA</span></div>
-            <div class="spec-visual">
-              <img class="machine-photo" src="assets/laser-machine-clean.png" alt="Máquina laser industrial para jeans e tecidos" />
-              <span class="spec-corner spec-corner-tl"></span><span class="spec-corner spec-corner-br"></span>
-              <div class="spec-caption">350 / 550 W <span>CONFIGURAÇÕES</span></div>
+          <p class="section-lead">Role para explorar cada solução, suas aplicações e os principais dados técnicos.</p>
+        </div>
+
+        <div class="container product-showcase-grid">
+          <div class="product-stage-wrap">
+            <div class="product-stage" data-product-stage>
+              <div class="stage-grid" aria-hidden="true"></div>
+              <div class="product-visual is-active" data-product-visual="laser">
+                <img src="assets/laser-machine-premium.png" alt="Máquina laser industrial para jeans e tecidos" />
+                <span class="stage-label">TEXLASER / CO₂</span>
+              </div>
+              <div class="product-visual" data-product-visual="ozone">
+                <img src="assets/ozoclean-control.png" alt="Gerador de ozônio Ozoclean em ambiente industrial" />
+                <span class="stage-label">OZOCLEAN / O₃</span>
+              </div>
+              <div class="stage-readout"><span>01</span><b data-stage-readout>LASER / TEXTILE</b><i></i></div>
             </div>
-            <div class="spec-grid">
-              <div><b>01</b><span>Processo a seco</span></div>
-              <div><b>02</b><span>Posicionamento visual</span></div>
-              <div><b>03</b><span>Área industrial</span></div>
-              <div><b>04</b><span>Treinamento incluído*</span></div>
-            </div>
-            <p class="spec-footnote">*Condições e escopo a confirmar.</p>
+          </div>
+
+          <div class="product-chapters">
+            <article class="product-chapter is-active" data-product-chapter="laser">
+              <div class="chapter-index">01 <span>/ 02</span></div>
+              <p class="kicker">Texlaser · acabamento têxtil</p>
+              <h3>Precisão para<br /><em>criar escala.</em></h3>
+              <p class="chapter-copy">Laser CO₂ para jeans, camisetas e tecidos. Uma plataforma para criar efeitos, marcar superfícies e levar mais consistência ao acabamento.</p>
+              <div class="chapter-specs">
+                <div><span>Potência</span><strong>350 / 550 W</strong></div>
+                <div><span>Área de trabalho</span><strong>1.350 × 1.350 mm</strong></div>
+                <div><span>Dimensões</span><strong>2.550 × 2.550 × 2.500 mm</strong></div>
+                <div><span>Refrigeração</span><strong>Água · chiller</strong></div>
+              </div>
+              <span class="chapter-note">Dados preliminares · confirmar configuração comercial.</span>
+            </article>
+
+            <article class="product-chapter" data-product-chapter="ozone">
+              <div class="chapter-index">02 <span>/ 02</span></div>
+              <p class="kicker">Ozoclean · tratamento industrial</p>
+              <h3>Processos mais<br /><em>limpos e controlados.</em></h3>
+              <p class="chapter-copy">Geradores de ozônio para lavanderias, água e efluentes e outras aplicações industriais que pedem controle, eficiência e segurança operacional.</p>
+              <div class="chapter-specs chapter-specs-ozone">
+                <div><span>Aplicações</span><strong>Lavanderias industriais</strong></div>
+                <div><span>Processos</span><strong>Água e efluentes</strong></div>
+                <div><span>Instalação</span><strong>Projeto por aplicação</strong></div>
+                <div><span>Atendimento</span><strong>Brasil · São Paulo</strong></div>
+              </div>
+              <span class="chapter-note">Especificações e escopo conforme o projeto.</span>
+            </article>
           </div>
         </div>
       </section>
 
-      <section class="applications section-blue">
+      <section class="applications section-blue" id="aplicacoes">
         <div class="container applications-layout">
           <div class="section-label light reveal"><span>04</span> ONDE APLICAMOS</div>
           <div class="applications-content reveal">
@@ -140,10 +172,6 @@
               <span>Outras aplicações industriais</span>
             </div>
           </div>
-          <figure class="industrial-image laser-image reveal" data-parallax="-0.06">
-            <img src="assets/laser-machine-premium.png" alt="Máquina laser industrial em ambiente de produção" />
-            <figcaption>LASER / TEXTILE SYSTEM</figcaption>
-          </figure>
         </div>
       </section>
 

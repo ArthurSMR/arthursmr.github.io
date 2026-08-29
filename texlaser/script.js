@@ -10,6 +10,10 @@ const storySections = [...document.querySelectorAll('main > section:not(.hero)')
   section,
   layer: section.querySelector(':scope > .container'),
 })).filter(({ layer }) => layer);
+const productStage = document.querySelector('[data-product-stage]');
+const productVisuals = [...document.querySelectorAll('[data-product-visual]')];
+const productChapters = [...document.querySelectorAll('[data-product-chapter]')];
+const stageReadout = document.querySelector('[data-stage-readout]');
 
 const updateHeader = () => header.classList.toggle('scrolled', window.scrollY > 30);
 window.addEventListener('scroll', updateHeader, { passive: true });
@@ -36,6 +40,33 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
 if (processLine) observer.observe(processLine);
+
+const activateProduct = (product) => {
+  productVisuals.forEach((visual) => visual.classList.toggle('is-active', visual.dataset.productVisual === product));
+  productChapters.forEach((chapter) => chapter.classList.toggle('is-active', chapter.dataset.productChapter === product));
+  if (stageReadout) stageReadout.textContent = product === 'ozone' ? 'OZÔNIO / INDUSTRIAL' : 'LASER / TEXTILE';
+};
+
+const productObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting && entry.intersectionRatio > 0.45) activateProduct(entry.target.dataset.productChapter);
+  });
+}, { threshold: [0.45, 0.65], rootMargin: '-12% 0px -24% 0px' });
+
+productChapters.forEach((chapter) => productObserver.observe(chapter));
+
+productStage?.addEventListener('pointermove', (event) => {
+  const rect = productStage.getBoundingClientRect();
+  const x = ((event.clientX - rect.left) / rect.width - 0.5) * 2;
+  const y = ((event.clientY - rect.top) / rect.height - 0.5) * 2;
+  productStage.style.setProperty('--stage-tilt-x', `${(-y * 1.8).toFixed(2)}deg`);
+  productStage.style.setProperty('--stage-tilt-y', `${(x * 2.4).toFixed(2)}deg`);
+});
+
+productStage?.addEventListener('pointerleave', () => {
+  productStage.style.setProperty('--stage-tilt-x', '0deg');
+  productStage.style.setProperty('--stage-tilt-y', '0deg');
+});
 
 let scrollTicking = false;
 
