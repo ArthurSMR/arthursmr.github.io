@@ -1296,7 +1296,6 @@ main > section:not(.hero) > .container { transform: translate3d(0, var(--story-l
 texlaser-logo {
   display: inline-flex;
   align-items: center;
-  gap: 13px;
   color: var(--paper);
 }
 
@@ -1307,29 +1306,16 @@ texlaser-logo {
   min-width: 0;
 }
 
-.brand-wordmark-window {
-  position: relative;
+.brand-wordmark {
   display: block;
-  width: 164px;
-  height: 13px;
-  overflow: hidden;
-  mix-blend-mode: screen;
-}
-
-.brand-wordmark-window img {
-  position: absolute;
-  top: -7px;
-  left: -5px;
-  display: block;
-  width: 180px;
-  max-width: none;
+  width: 178px;
   height: auto;
-  filter: grayscale(1) contrast(8) brightness(1.08);
+  overflow: hidden;
 }
 
 .brand-group {
-  margin-top: 7px;
-  padding-left: 1px;
+  margin-top: 6px;
+  padding-left: 2px;
   color: var(--blue);
   font-family: var(--display);
   font-size: 8px;
@@ -1341,8 +1327,6 @@ texlaser-logo {
 .footer-brand texlaser-logo { transform-origin: left center; }
 
 @media (max-width: 640px) {
-  texlaser-logo { gap: 10px; }
-  .brand-wordmark-window { width: 132px; height: 11px; }
-  .brand-wordmark-window img { top: -5.6px; left: -4px; width: 145px; }
+  .brand-wordmark { width: 148px; }
   .brand-group { margin-top: 6px; font-size: 7px; letter-spacing: .34em; }
 }

@@ -3,9 +3,15 @@ class TexlaserLogo extends HTMLElement {
     if (this.dataset.ready) return;
     this.dataset.ready = 'true';
     this.innerHTML = `
-      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
       <span class="brand-lockup" aria-hidden="true">
-        <span class="brand-wordmark-window"><img src="assets/texlaser-wordmark-source.jpeg" alt="" /></span>
+        <svg class="brand-wordmark" viewBox="35 52 1465 112" role="presentation" focusable="false">
+          <defs>
+            <filter id="texlaser-wordmark-alpha" color-interpolation-filters="sRGB">
+              <feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  .34 .34 .34 0 -.18" />
+            </filter>
+          </defs>
+          <image href="assets/texlaser-wordmark-source.jpeg" width="1600" height="200" filter="url(#texlaser-wordmark-alpha)" />
+        </svg>
         <span class="brand-group">GROUP</span>
       </span>`;
   }
