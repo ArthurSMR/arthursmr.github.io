@@ -27,7 +27,7 @@
 
       <nav id="site-nav" class="site-nav" data-i18n-attr="aria-label:nav.label" aria-label="Navegação principal">
         <a href="#solucoes" data-i18n="nav.solutions">Soluções</a>
-        <a href="#maquinas" data-i18n="nav.machines">Máquinas</a>
+        <a href="#produtos" data-i18n="nav.machines">Máquinas</a>
         <a href="#aplicacoes" data-i18n="nav.applications">Aplicações</a>
         <a href="#processo" data-i18n="nav.process">Como trabalhamos</a>
         <a href="#empresa" data-i18n="nav.company">Empresa</a>
@@ -52,56 +52,12 @@
           <p class="hero-copy" data-i18n="hero.copy">Soluções industriais em laser e ozônio para transformar processos em mais precisão, produtividade e resultado.</p>
           <div class="hero-actions">
             <a class="button button-primary" href="#contato" data-i18n="common.talkToUs">Falar com um atendente <span>↗</span></a>
-            <a class="text-link" href="#maquinas" data-i18n="hero.explore">Conhecer soluções <span>↓</span></a>
+            <a class="text-link" href="#solucoes" data-i18n="hero.explore">Ver as máquinas <span>↓</span></a>
           </div>
         </div>
         <div class="hero-note hero-technology-index">
           <div class="hero-tech-item"><span>01</span><strong data-i18n="hero.laserLabel">Laser têxtil</strong><small data-i18n="hero.laserDetail">Acabamento e personalização</small></div>
           <div class="hero-tech-item"><span>02</span><strong data-i18n="hero.ozoneLabel">Geradores de ozônio</strong><small data-i18n="hero.ozoneDetail">Tratamento industrial</small></div>
-        </div>
-      </section>
-
-      <section class="machine-launcher section-dark" id="maquinas">
-        <div class="container">
-          <div class="machine-launcher-intro reveal">
-            <div class="section-label light" data-i18n="machineFocus.label">MÁQUINAS / DESTAQUE</div>
-            <div>
-              <h2 class="machine-launcher-title" data-i18n="machineFocus.title">Escolha a tecnologia que entra no seu <em>processo.</em></h2>
-              <p class="machine-launcher-lead" data-i18n="machineFocus.lead">Laser e ozônio para operações industriais que precisam evoluir.</p>
-            </div>
-          </div>
-
-          <div class="machine-rail" aria-label="Escolha uma linha de máquinas">
-            <a class="machine-card reveal" href="#laser-machine" data-product-jump="laser">
-              <div class="machine-card-media">
-                <span class="machine-card-index">01 / 02</span>
-                <img src="assets/laser-machine-premium-v2-960.webp" srcset="assets/laser-machine-premium-v2-640.webp 640w, assets/laser-machine-premium-v2-960.webp 960w" sizes="(max-width: 640px) 86vw, 48vw" data-i18n-attr="alt:products.laserAlt" alt="Máquina laser industrial para jeans e tecidos" loading="eager" />
-              </div>
-              <div class="machine-card-meta">
-                <div>
-                  <span class="machine-card-label" data-i18n="machineFocus.laserLabel">TEXLASER</span>
-                  <h3 data-i18n="machineFocus.laserTitle">Laser CO₂</h3>
-                  <p data-i18n="machineFocus.laserCopy">Acabamento, marcação e personalização têxtil.</p>
-                </div>
-                <span class="machine-card-arrow" aria-hidden="true">↗</span>
-              </div>
-            </a>
-
-            <a class="machine-card reveal" href="#ozone-machine" data-product-jump="ozone">
-              <div class="machine-card-media">
-                <span class="machine-card-index">02 / 02</span>
-                <img src="assets/ozoclean-control-v2-960.webp" srcset="assets/ozoclean-control-v2-640.webp 640w, assets/ozoclean-control-v2-960.webp 960w" sizes="(max-width: 640px) 86vw, 48vw" data-i18n-attr="alt:products.ozoneAlt" alt="Gerador de ozônio Ozoclean em ambiente industrial" loading="eager" />
-              </div>
-              <div class="machine-card-meta">
-                <div>
-                  <span class="machine-card-label" data-i18n="machineFocus.ozoneLabel">OZOCLEAN</span>
-                  <h3 data-i18n="machineFocus.ozoneTitle">Geradores de ozônio</h3>
-                  <p data-i18n="machineFocus.ozoneCopy">Tratamento industrial com mais controle.</p>
-                </div>
-                <span class="machine-card-arrow" aria-hidden="true">↗</span>
-              </div>
-            </a>
-          </div>
         </div>
       </section>
 
@@ -128,31 +84,37 @@
 
       <section class="solutions section-dark" id="solucoes">
         <div class="container">
-          <div class="section-top reveal">
-            <div class="section-label light" data-i18n="solutions.label"><span>02</span> NOSSAS FRENTES</div>
-            <p class="section-lead" data-i18n="solutions.lead">Tecnologia certa para o processo certo. Começamos pelo universo do jeans e das lavanderias industriais.</p>
+          <div class="technology-selector-intro reveal">
+            <div class="section-label light" data-i18n="machineFocus.label"><span>02</span> TECNOLOGIAS</div>
+            <p class="section-lead" data-i18n="machineFocus.lead">Duas frentes industriais para diferentes momentos da operação.</p>
           </div>
 
-          <div class="solution-list">
-            <article class="solution-row reveal" id="texlaser">
-              <div class="solution-index">01</div>
-              <div class="solution-main">
-                <div class="solution-title-line"><h3>Texlaser</h3><span class="solution-type" data-i18n="solutions.laser.type">MÁQUINAS LASER</span></div>
-                <p data-i18n="solutions.laser.copy">Acabamento, marcação e personalização com mais controle, repetibilidade e liberdade criativa para jeans, camisetas e tecidos.</p>
-                <div class="solution-tags"><span data-i18n="tags.denim">JEANS / DENIM</span><span data-i18n="tags.apparel">CONFECÇÃO</span><span data-i18n="tags.fabric">TECIDO</span></div>
+          <div class="technology-rail" aria-label="Tecnologias Texlaser Group">
+            <a class="technology-panel reveal" href="#laser-machine" data-product-jump="laser">
+              <div class="technology-panel-media">
+                <span class="technology-panel-index">01 / 02</span>
+                <img src="assets/laser-machine-premium-v2-960.webp" srcset="assets/laser-machine-premium-v2-640.webp 640w, assets/laser-machine-premium-v2-960.webp 960w" sizes="(max-width: 640px) 88vw, 50vw" data-i18n-attr="alt:products.laserAlt" alt="Máquina laser industrial para jeans e tecidos" loading="lazy" />
               </div>
-              <div class="solution-arrow">↗</div>
-            </article>
+              <div class="technology-panel-copy">
+                <span class="technology-panel-label" data-i18n="machineFocus.laserLabel">TEXLASER</span>
+                <h3 data-i18n="machineFocus.laserTitle">Laser CO₂</h3>
+                <p data-i18n="machineFocus.laserCopy">Acabamento, marcação e personalização têxtil.</p>
+                <span class="technology-panel-action" data-i18n="machineFocus.laserAction">Ver máquina laser <span>↗</span></span>
+              </div>
+            </a>
 
-            <article class="solution-row reveal" id="ozoclean">
-              <div class="solution-index">02</div>
-              <div class="solution-main">
-                <div class="solution-title-line"><h3>Ozoclean</h3><span class="solution-type" data-i18n="solutions.ozone.type">GERADORES DE OZÔNIO</span></div>
-                <p data-i18n="solutions.ozone.copy">Geradores de ozônio para aplicações industriais em lavanderias, tratamento de água e efluentes, alimentos e outros processos.</p>
-                <div class="solution-tags"><span data-i18n="tags.laundries">LAVANDERIAS</span><span data-i18n="tags.water">ÁGUA / EFLUENTES</span><span data-i18n="tags.industrial">PROCESSOS INDUSTRIAIS</span></div>
+            <a class="technology-panel reveal" href="#ozone-machine" data-product-jump="ozone">
+              <div class="technology-panel-media technology-panel-media-ozone">
+                <span class="technology-panel-index">02 / 02</span>
+                <img src="assets/ozoclean-control-v2-960.webp" srcset="assets/ozoclean-control-v2-640.webp 640w, assets/ozoclean-control-v2-960.webp 960w" sizes="(max-width: 640px) 88vw, 50vw" data-i18n-attr="alt:products.ozoneAlt" alt="Gerador de ozônio Ozoclean em ambiente industrial" loading="lazy" />
               </div>
-              <div class="solution-arrow">↗</div>
-            </article>
+              <div class="technology-panel-copy">
+                <span class="technology-panel-label" data-i18n="machineFocus.ozoneLabel">OZOCLEAN</span>
+                <h3 data-i18n="machineFocus.ozoneTitle">Geradores de ozônio</h3>
+                <p data-i18n="machineFocus.ozoneCopy">Tratamento industrial com mais controle.</p>
+                <span class="technology-panel-action" data-i18n="machineFocus.ozoneAction">Ver geradores de ozônio <span>↗</span></span>
+              </div>
+            </a>
           </div>
         </div>
       </section>
@@ -208,7 +170,7 @@
             </article>
 
             <article class="product-chapter" id="ozone-machine" data-product-chapter="ozone">
-              <div class="chapter-mobile-visual">
+              <div class="chapter-mobile-visual chapter-mobile-visual-ozone">
                 <img src="assets/ozoclean-control-v2-960.webp" srcset="assets/ozoclean-control-v2-640.webp 640w, assets/ozoclean-control-v2-960.webp 960w" sizes="100vw" data-i18n-attr="alt:products.ozoneAlt" alt="Gerador de ozônio Ozoclean em ambiente industrial" loading="lazy" />
                 <span>OZOCLEAN / O₃</span>
                 <div class="chapter-mobile-specs">
