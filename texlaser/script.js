@@ -49,6 +49,15 @@ const productStage = document.querySelector('[data-product-stage]');
 const productVisuals = [...document.querySelectorAll('[data-product-visual]')];
 const productChapters = [...document.querySelectorAll('[data-product-chapter]')];
 const stageReadout = document.querySelector('[data-stage-readout]');
+const heroSlides = [...document.querySelectorAll('[data-hero-slide]')];
+
+if (heroSlides.length > 1 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  let heroSlideIndex = 0;
+  window.setInterval(() => {
+    heroSlideIndex = (heroSlideIndex + 1) % heroSlides.length;
+    heroSlides.forEach((slide, index) => slide.classList.toggle('is-active', index === heroSlideIndex));
+  }, 5600);
+}
 
 const updateHeader = () => header.classList.toggle('scrolled', window.scrollY > 30);
 window.addEventListener('scroll', updateHeader, { passive: true });

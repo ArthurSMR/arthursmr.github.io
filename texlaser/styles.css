@@ -1110,3 +1110,143 @@ main > section:not(.hero) > .container { transform: translate3d(0, var(--story-l
   .product-showcase { padding: 76px 0 84px; }
   .product-showcase-intro h2 { font-size: 43px; }
 }
+
+/* Full-bleed industrial hero: one clear promise, two real technologies. */
+.hero {
+  min-height: max(740px, 100svh);
+  isolation: isolate;
+}
+
+.hero-machine-visual {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  animation: none;
+  z-index: 1;
+}
+
+.hero-machine-slide {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+  pointer-events: none;
+}
+
+.hero-machine-slide.is-active { opacity: 1; }
+
+.hero-slide-backdrop {
+  position: absolute;
+  inset: -6%;
+  width: 112%;
+  height: 112%;
+  object-fit: cover;
+  filter: blur(28px) brightness(.42) saturate(.62);
+  transform: scale(1.08);
+}
+
+.hero-slide-subject {
+  position: absolute;
+  top: 4%;
+  right: 1%;
+  width: 65%;
+  height: 96%;
+  object-fit: contain;
+  object-position: right center;
+  filter: saturate(.76) contrast(1.06) brightness(.82);
+  -webkit-mask-image: radial-gradient(ellipse 74% 86% at 57% 50%, #000 57%, transparent 100%);
+  mask-image: radial-gradient(ellipse 74% 86% at 57% 50%, #000 57%, transparent 100%);
+  transform: scale(1.01);
+  transition: transform 6s cubic-bezier(.2,.65,.25,1);
+}
+
+.hero-machine-slide.is-active .hero-slide-subject { transform: scale(1.045); }
+.hero-machine-slide[data-hero-slide="ozone"] .hero-slide-subject { right: 7%; width: 47%; object-position: center; }
+
+.hero-machine-tag {
+  top: auto;
+  right: 4%;
+  bottom: 34px;
+  z-index: 2;
+}
+
+.hero-overlay {
+  z-index: 2;
+  background:
+    linear-gradient(90deg, rgba(4,14,23,.98) 0%, rgba(4,14,23,.88) 35%, rgba(4,14,23,.28) 72%, rgba(4,14,23,.45) 100%),
+    linear-gradient(0deg, rgba(5,17,27,.88) 0%, transparent 48%);
+}
+
+.hero-kicker {
+  margin: 0 0 24px;
+  color: var(--blue);
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  animation: rise-in .8s .1s both;
+}
+
+.hero h1 {
+  max-width: 920px;
+  margin-top: 0;
+  font-size: clamp(58px, 7.2vw, 104px);
+}
+.hero-content { position: relative; z-index: 4; max-width: var(--max); }
+
+@media (max-width: 900px) {
+  .hero { min-height: 760px; padding-bottom: 64px; }
+  .hero-machine-visual { inset: 72px 0 0; width: 100%; height: auto; }
+  .hero-machine-slide .hero-slide-backdrop { display: none; }
+  .hero-machine-slide .hero-slide-subject {
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 53%;
+    object-fit: cover;
+    object-position: center center;
+    filter: saturate(.72) contrast(1.08) brightness(.9);
+    -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 72%, transparent 100%);
+    mask-image: linear-gradient(180deg, #000 0%, #000 72%, transparent 100%);
+  }
+  .hero-machine-slide[data-hero-slide="ozone"] .hero-slide-subject {
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 53%;
+    object-position: center 56%;
+  }
+  .hero-overlay {
+    background: linear-gradient(180deg, rgba(5,16,25,.08) 0%, rgba(5,16,25,.12) 28%, rgba(5,16,25,.72) 48%, rgba(5,16,25,.98) 67%, #071521 100%);
+  }
+  .hero-machine-tag { display: none; }
+}
+
+@media (max-width: 640px) {
+  .hero { min-height: 720px; padding-bottom: 54px; }
+  .hero-machine-visual { inset: 72px 0 0; width: 100%; height: auto; opacity: 1; }
+  .hero-content { padding-top: 0; }
+  .hero-kicker { max-width: 290px; margin-bottom: 15px; font-size: 9px; }
+  .hero h1 {
+    max-width: 350px;
+    margin-bottom: 17px;
+    font-size: clamp(43px, 12.3vw, 54px);
+    line-height: .96;
+  }
+  .hero-copy { max-width: 310px; font-size: 15px; line-height: 1.5; }
+  .hero-actions { margin-top: 25px; }
+  .hero-actions .button { width: auto; min-width: 236px; max-width: 100%; }
+  .intro { padding: 68px 0 72px; }
+  .intro-copy h2 { font-size: 41px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-machine-slide { transition: none; }
+  .hero-machine-slide:not(.is-active) { display: none; }
+  .hero-slide-subject { transition: none; transform: none; }
+}

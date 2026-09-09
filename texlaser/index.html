@@ -40,15 +40,24 @@
     <main id="top">
       <section class="hero section-dark">
         <div class="hero-media" data-parallax="0.12" role="img" data-i18n-attr="aria-label:hero.imageAlt" aria-label="Ambiente técnico para tecnologia industrial"></div>
-        <div class="hero-machine-visual" aria-hidden="true">
-          <img src="assets/laser-machine-premium-v2-960.webp" srcset="assets/laser-machine-premium-v2-640.webp 640w, assets/laser-machine-premium-v2-960.webp 960w" sizes="(max-width: 640px) 100vw, 56vw" alt="" fetchpriority="high" />
-          <span class="hero-machine-tag">TEXLASER / CO₂</span>
+        <div class="hero-machine-visual" data-hero-visual aria-hidden="true">
+          <figure class="hero-machine-slide is-active" data-hero-slide="laser">
+            <img class="hero-slide-backdrop" src="assets/laser-machine-premium-v2-960.webp" alt="" />
+            <img class="hero-slide-subject" src="assets/laser-machine-premium-v2-960.webp" srcset="assets/laser-machine-premium-v2-640.webp 640w, assets/laser-machine-premium-v2-960.webp 960w" sizes="(max-width: 640px) 100vw, 64vw" alt="" fetchpriority="high" />
+            <span class="hero-machine-tag">TEXLASER / LASER CO₂</span>
+          </figure>
+          <figure class="hero-machine-slide" data-hero-slide="ozone">
+            <img class="hero-slide-backdrop" src="assets/ozoclean-control-v2-960.webp" alt="" />
+            <img class="hero-slide-subject" src="assets/ozoclean-control-v2-960.webp" srcset="assets/ozoclean-control-v2-640.webp 640w, assets/ozoclean-control-v2-960.webp 960w" sizes="(max-width: 640px) 82vw, 46vw" alt="" />
+            <span class="hero-machine-tag">OZOCLEAN / O₃</span>
+          </figure>
         </div>
         <div class="hero-overlay"></div>
         <div class="hero-grid"></div>
         <div class="container hero-content reveal">
-          <h1 data-i18n="hero.title">Laser e ozônio<br /><em>para a indústria.</em></h1>
-          <p class="hero-copy" data-i18n="hero.copy">Máquinas laser e geradores de ozônio com implantação e suporte.</p>
+          <p class="hero-kicker" data-i18n="hero.kicker">MÁQUINAS LASER · GERADORES DE OZÔNIO</p>
+          <h1 data-i18n="hero.title">Tecnologia que<br /><em>transforma a produção.</em></h1>
+          <p class="hero-copy" data-i18n="hero.copy">Implantação, treinamento e suporte técnico.</p>
           <div class="hero-actions">
             <a class="button button-primary" href="#contato" data-i18n="common.talkToUs">Falar com um atendente <span>↗</span></a>
           </div>
@@ -59,9 +68,8 @@
         <div class="container intro-layout">
           <div class="section-label reveal" data-i18n="company.label"><span>01</span> O GRUPO</div>
           <div class="intro-copy reveal">
-            <h2 data-i18n="company.title">Tecnologia para a <span>operação real.</span></h2>
-            <p class="body-copy" data-i18n="company.copy">Laser e ozônio com implantação, treinamento e suporte para quem precisa produzir.</p>
-            <a class="dark-link" href="#contato" data-i18n="company.cta">Falar com a equipe <span>↗</span></a>
+            <h2 data-i18n="company.title">Do equipamento<br /><span>à operação.</span></h2>
+            <p class="body-copy" data-i18n="company.copy">Distribuição de tecnologia industrial com implantação, treinamento e suporte em São Paulo.</p>
           </div>
         </div>
       </section>
