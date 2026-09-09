@@ -1011,3 +1011,102 @@ main > section:not(.hero) > .container { transform: translate3d(0, var(--story-l
   .chapter-mobile-visual-ozone { min-height: 330px; }
   .chapter-mobile-visual-ozone > img { height: 330px; }
 }
+
+/* Linear mobile pass: a poster-like hero, then one compact idea per section. */
+.hero-content { max-width: 590px; }
+.hero h1 { max-width: 650px; }
+.hero-technology-index { display: none; }
+
+.intro {
+  padding: 108px 0 112px;
+}
+
+.intro-layout {
+  grid-template-columns: minmax(150px, .55fr) minmax(0, 1.45fr);
+  gap: clamp(36px, 7vw, 110px);
+  align-items: start;
+}
+
+.intro-copy h2 {
+  max-width: 670px;
+  font-size: clamp(42px, 5vw, 70px);
+}
+
+.intro-copy .body-copy {
+  max-width: 510px;
+  margin: 23px 0 27px;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.technology-selector-intro {
+  margin-bottom: 30px;
+}
+
+.solutions {
+  padding: 94px 0 106px;
+}
+
+.product-showcase-intro {
+  grid-template-columns: minmax(150px, .55fr) minmax(0, 1.45fr);
+  max-width: 920px;
+  margin-bottom: 64px;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    min-height: 700px;
+    padding-bottom: 70px;
+  }
+  .hero-machine-visual {
+    top: 76px;
+    right: -7%;
+    width: 104vw;
+    height: 360px;
+  }
+  .hero-machine-tag { display: none; }
+  .hero-overlay {
+    background: linear-gradient(180deg, rgba(5,16,25,.1) 0%, rgba(5,16,25,.18) 32%, rgba(7,21,33,.72) 49%, rgba(7,21,33,.96) 70%, rgba(7,21,33,.99) 100%);
+  }
+  .intro { padding: 84px 0 88px; }
+  .intro-layout { grid-template-columns: 1fr; gap: 27px; }
+  .intro-layout > .section-label { grid-column: auto; }
+  .intro-copy { grid-column: auto; }
+  .product-showcase-intro { grid-template-columns: 1fr; gap: 22px; margin-bottom: 38px; }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    min-height: 660px;
+    padding-bottom: 54px;
+  }
+  .hero-machine-visual {
+    top: 74px;
+    right: -10%;
+    width: 110vw;
+    height: 305px;
+    opacity: .8;
+  }
+  .hero h1 {
+    max-width: 330px;
+    margin: 0 0 17px;
+    font-size: clamp(44px, 12.6vw, 54px);
+    line-height: .94;
+    letter-spacing: -.085em;
+  }
+  .hero-copy {
+    max-width: 285px;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  .hero-actions { margin-top: 27px; }
+  .hero-actions .button { max-width: 100%; }
+  .intro { padding: 72px 0 76px; }
+  .intro-layout { gap: 24px; }
+  .intro-copy h2 { max-width: 330px; font-size: 43px; line-height: 1.01; }
+  .intro-copy .body-copy { max-width: 330px; margin: 19px 0 23px; font-size: 16px; line-height: 1.6; }
+  .solutions { padding: 76px 0 82px; }
+  .technology-selector-intro { margin-bottom: 24px; }
+  .product-showcase { padding: 76px 0 84px; }
+  .product-showcase-intro h2 { font-size: 43px; }
+}
