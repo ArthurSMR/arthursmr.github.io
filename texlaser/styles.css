@@ -432,3 +432,170 @@ main > section:not(.hero) > .container { transform: translate3d(0, var(--story-l
   .founder-portrait-wrap { width: min(100%, 318px); }
   .founder-caption { margin-top: 13px; font-size: 10px; }
 }
+
+/* Product priority: the first decision after the hero. */
+.machine-launcher {
+  padding: 112px 0 124px;
+  overflow: hidden;
+  background: #061521;
+  color: var(--paper);
+}
+
+.machine-launcher-intro {
+  display: grid;
+  grid-template-columns: .72fr 1.28fr;
+  gap: 50px;
+  align-items: start;
+}
+
+.machine-launcher-title {
+  max-width: 720px;
+  margin: 0;
+  color: var(--paper);
+  font-size: clamp(42px, 5.4vw, 76px);
+  line-height: .98;
+  letter-spacing: -.085em;
+}
+
+.machine-launcher-title em {
+  color: var(--blue);
+  font-style: normal;
+  font-weight: 500;
+}
+
+.machine-launcher-lead {
+  max-width: 330px;
+  margin: 20px 0 0;
+  color: rgba(241,243,241,.72);
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.machine-rail {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 70px;
+}
+
+.machine-card {
+  display: block;
+  min-width: 0;
+  color: inherit;
+  scroll-snap-align: start;
+}
+
+.machine-card-media {
+  position: relative;
+  aspect-ratio: 1.25;
+  overflow: hidden;
+  border: 1px solid rgba(183,225,255,.25);
+  background: #0d2433;
+}
+
+.machine-card-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(.78) contrast(1.05);
+  transition: transform .8s cubic-bezier(.22,.8,.24,1), filter .5s ease;
+}
+
+.machine-card:hover .machine-card-media img,
+.machine-card:focus-visible .machine-card-media img {
+  transform: scale(1.035);
+  filter: saturate(.95) contrast(1.05);
+}
+
+.machine-card-index {
+  position: absolute;
+  z-index: 2;
+  top: 18px;
+  left: 18px;
+  color: rgba(183,225,255,.82);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .12em;
+}
+
+.machine-card-meta {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  margin-top: 22px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(241,243,241,.2);
+}
+
+.machine-card-label {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--blue);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .12em;
+}
+
+.machine-card h3 {
+  margin: 0;
+  color: var(--paper);
+  font-size: clamp(28px, 3.5vw, 50px);
+  line-height: 1;
+  letter-spacing: -.07em;
+}
+
+.machine-card-arrow {
+  color: var(--blue);
+  font-size: 26px;
+  transition: transform .25s ease;
+}
+
+.machine-card:hover .machine-card-arrow,
+.machine-card:focus-visible .machine-card-arrow {
+  transform: translate(4px, -4px);
+}
+
+.machine-card p {
+  max-width: 300px;
+  margin: 15px 0 0;
+  color: rgba(241,243,241,.68);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .machine-launcher { padding: 92px 0 104px; }
+  .machine-launcher-intro { grid-template-columns: 1fr; gap: 22px; }
+  .machine-launcher-title { font-size: clamp(44px, 11vw, 64px); }
+  .machine-launcher-lead { margin-top: 17px; font-size: 15px; }
+  .machine-rail {
+    grid-auto-flow: column;
+    grid-auto-columns: 86%;
+    grid-template-columns: none;
+    gap: 16px;
+    margin-top: 48px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .machine-rail::-webkit-scrollbar { display: none; }
+  .machine-card-media { aspect-ratio: 1.08; }
+  .machine-card h3 { font-size: 39px; }
+  .machine-card p { font-size: 15px; }
+}
+
+@media (max-width: 640px) {
+  .machine-launcher { padding: 78px 0 88px; }
+  .machine-launcher-title { font-size: clamp(42px, 11.6vw, 56px); }
+  .machine-launcher-lead { font-size: 15px; line-height: 1.6; }
+  .machine-card-media { aspect-ratio: 1.02; }
+  .machine-card h3 { font-size: 37px; }
+  .machine-card-label { font-size: 10px; }
+  .machine-card p { font-size: 15px; line-height: 1.55; }
+  .machine-card-arrow { display: none; }
+}

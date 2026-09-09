@@ -82,6 +82,15 @@ const activateProduct = (product) => {
   if (stageReadout) stageReadout.textContent = product === 'ozone' ? (document.documentElement.lang === 'en' ? 'OZONE / INDUSTRIAL' : document.documentElement.lang === 'es' ? 'OZONO / INDUSTRIAL' : 'OZÔNIO / INDUSTRIAL') : 'LASER / TEXTILE';
 };
 
+document.querySelectorAll('[data-product-jump]').forEach((jump) => {
+  jump.addEventListener('click', (event) => {
+    event.preventDefault();
+    const product = jump.dataset.productJump;
+    activateProduct(product);
+    document.querySelector(`[data-product-chapter="${product}"]`)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+});
+
 const productObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting && entry.intersectionRatio > 0.45) activateProduct(entry.target.dataset.productChapter);
