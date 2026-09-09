@@ -1,3 +1,18 @@
+class TexlaserLogo extends HTMLElement {
+  connectedCallback() {
+    if (this.dataset.ready) return;
+    this.dataset.ready = 'true';
+    this.innerHTML = `
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="brand-lockup" aria-hidden="true">
+        <span class="brand-wordmark-window"><img src="assets/texlaser-wordmark-source.jpeg" alt="" /></span>
+        <span class="brand-group">GROUP</span>
+      </span>`;
+  }
+}
+
+if (!customElements.get('texlaser-logo')) customElements.define('texlaser-logo', TexlaserLogo);
+
 const languageSelect = document.querySelector('[data-language-select]');
 const supportedLanguages = ['pt-BR', 'en', 'es'];
 const getValue = (source, path) => path.split('.').reduce((value, key) => value?.[key], source);
