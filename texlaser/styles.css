@@ -1648,3 +1648,80 @@ main > section:not(.hero) > .container { will-change: auto; }
   .hero-machine-slide:not(.is-active) { display: none; }
   main > section:not(.hero) > .container { transform: none !important; }
 }
+
+/* Mobile composition pass: keep the machine, message, and action in one readable flow. */
+@media (max-width: 760px) {
+  html, body { overflow-x: clip; }
+
+  .site-header { min-height: 70px; }
+  .menu-toggle { min-width: 72px; min-height: 44px; justify-content: center; padding: 8px 4px; }
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-height: max(690px, 88svh);
+    padding: 70px 0 32px;
+  }
+  .hero-machine-visual {
+    inset: 70px 0 auto;
+    width: 100%;
+    height: clamp(245px, 39svh, 330px);
+    opacity: 1;
+  }
+  .hero-machine-slide .hero-slide-subject {
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0 10px;
+    object-fit: contain;
+    object-position: center;
+    filter: saturate(.8) contrast(1.05) brightness(.9);
+    -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 78%, transparent 100%);
+    mask-image: linear-gradient(180deg, #000 0%, #000 78%, transparent 100%);
+    transform: none;
+  }
+  .hero-machine-slide[data-hero-slide="ozone"] .hero-slide-subject { padding-inline: 36px; }
+  .hero-overlay {
+    background: linear-gradient(180deg, rgba(7,21,33,0) 0%, rgba(7,21,33,.02) 22%, rgba(7,21,33,.48) 48%, rgba(7,21,33,.92) 68%, #071521 78%);
+  }
+  .hero-grid { opacity: .035; }
+  .hero-content {
+    position: relative;
+    inset: auto;
+    z-index: 4;
+    width: calc(100% - 40px);
+    margin: clamp(260px, 38svh, 322px) auto 0;
+    padding: 0;
+  }
+  .hero-kicker { max-width: 100%; margin-bottom: 12px; font-size: 10px; line-height: 1.45; }
+  .hero h1 { max-width: 100%; margin: 0 0 13px; font-size: clamp(36px, 10.5vw, 45px); line-height: 1.02; letter-spacing: -.065em; }
+  .hero-copy { max-width: 34ch; font-size: 16px; line-height: 1.5; }
+  .hero-actions { margin-top: 19px; }
+  .hero-actions .button { width: 100%; min-width: 0; max-width: 360px; min-height: 54px; justify-content: space-between; }
+  .hero-machine-tag { display: none; }
+
+  .chapter-mobile-visual > img { height: clamp(260px, 80vw, 320px); padding: 18px 12px 14px; }
+  .chapter-mobile-visual-ozone > img { height: clamp(290px, 86vw, 340px); padding: 16px 34px 14px; }
+  .chapter-mobile-specs strong { font-size: 12px; line-height: 1.3; }
+  .chapter-mobile-specs small { font-size: 10px; line-height: 1.35; }
+  .chapter-specs span { font-size: 11px; }
+  .contact-form label { font-size: 12px; }
+  .footer-bottom { font-size: 11px; }
+}
+
+@media (max-width: 380px) {
+  .container, .hero-content { width: calc(100% - 32px); }
+  .hero-content { margin-top: clamp(250px, 38svh, 300px); }
+  .hero h1 { font-size: clamp(34px, 10.5vw, 39px); }
+  .hero-machine-slide[data-hero-slide="ozone"] .hero-slide-subject { padding-inline: 48px; }
+  .chapter-mobile-specs strong { font-size: 11px; }
+  .chapter-mobile-specs small { font-size: 10px; }
+}
+
+@media (hover: none) {
+  .button-primary:hover { transform: none; }
+  .technology-panel:hover .technology-panel-media img { transform: none; }
+  .technology-panel:active, .button-primary:active { transform: scale(.985); }
+}
