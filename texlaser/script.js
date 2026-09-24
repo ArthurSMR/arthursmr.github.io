@@ -85,15 +85,24 @@ const updateHeader = () => header.classList.toggle('scrolled', window.scrollY > 
 window.addEventListener('scroll', updateHeader, { passive: true });
 updateHeader();
 
-menuToggle?.addEventListener('click', () => {
-  const isOpen = nav.classList.toggle('open');
-  menuToggle.setAttribute('aria-expanded', String(isOpen));
-});
+const compactNavigation = window.matchMedia('(max-width: 1440px)');
+const setMenuOpen = (open) => {
+  const isOpen = Boolean(open && compactNavigation.matches);
+  nav?.classList.toggle('open', isOpen);
+  if (nav) nav.inert = compactNavigation.matches && !isOpen;
+  menuToggle?.setAttribute('aria-expanded', String(isOpen));
+};
 
-nav?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
-  nav.classList.remove('open');
-  menuToggle?.setAttribute('aria-expanded', 'false');
-}));
+setMenuOpen(false);
+menuToggle?.addEventListener('click', () => setMenuOpen(!nav?.classList.contains('open')));
+nav?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setMenuOpen(false)));
+compactNavigation.addEventListener('change', () => setMenuOpen(false));
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && nav?.classList.contains('open')) {
+    setMenuOpen(false);
+    menuToggle?.focus();
+  }
+});
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
