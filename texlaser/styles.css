@@ -1660,13 +1660,16 @@ main > section:not(.hero) > .container { will-change: auto; }
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    min-height: max(690px, 88svh);
+    min-height: 0;
+    height: auto;
     padding: 70px 0 32px;
   }
   .hero-machine-visual {
-    inset: 70px 0 auto;
+    position: relative;
+    inset: auto;
     width: 100%;
-    height: clamp(245px, 39svh, 330px);
+    height: clamp(340px, 54svh, 430px);
+    flex: 0 0 auto;
     opacity: 1;
   }
   .hero-machine-slide .hero-slide-subject {
@@ -1682,7 +1685,12 @@ main > section:not(.hero) > .container { will-change: auto; }
     mask-image: linear-gradient(180deg, #000 0%, #000 78%, transparent 100%);
     transform: none;
   }
-  .hero-machine-slide[data-hero-slide="ozone"] .hero-slide-subject { padding-inline: 36px; }
+  .hero-machine-slide[data-hero-slide="ozone"] .hero-slide-subject {
+    right: 0;
+    width: 100%;
+    padding-inline: 24px;
+    object-position: center;
+  }
   .hero-overlay {
     background: linear-gradient(180deg, rgba(7,21,33,0) 0%, rgba(7,21,33,.02) 22%, rgba(7,21,33,.48) 48%, rgba(7,21,33,.92) 68%, #071521 78%);
   }
@@ -1692,7 +1700,7 @@ main > section:not(.hero) > .container { will-change: auto; }
     inset: auto;
     z-index: 4;
     width: calc(100% - 40px);
-    margin: clamp(260px, 38svh, 322px) auto 0;
+    margin: -28px auto 0;
     padding: 0;
   }
   .hero-kicker { max-width: 100%; margin-bottom: 12px; font-size: 10px; line-height: 1.45; }
@@ -1713,9 +1721,8 @@ main > section:not(.hero) > .container { will-change: auto; }
 
 @media (max-width: 380px) {
   .container, .hero-content { width: calc(100% - 32px); }
-  .hero-content { margin-top: clamp(250px, 38svh, 300px); }
   .hero h1 { font-size: clamp(34px, 10.5vw, 39px); }
-  .hero-machine-slide[data-hero-slide="ozone"] .hero-slide-subject { padding-inline: 48px; }
+  .hero-machine-slide[data-hero-slide="ozone"] .hero-slide-subject { padding-inline: 24px; }
   .chapter-mobile-specs strong { font-size: 11px; }
   .chapter-mobile-specs small { font-size: 10px; }
 }
