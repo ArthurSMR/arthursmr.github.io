@@ -2,8 +2,8 @@
   const buttons = [...document.querySelectorAll('.rsvp-button')];
   const status = document.getElementById('rsvp-status');
   const answers = {
-    yes: 'Presença anotada. Te esperamos no gramado! ⚽',
-    maybe: 'Marcamos como talvez. Esperamos te ver por lá!',
+    yes: 'Presença na torcida confirmada. Te esperamos em Pembroke! ⚽',
+    maybe: 'Anotamos como talvez. Esperamos te ver na torcida!',
     no: 'Resposta anotada. Fica pra próxima!'
   };
 
