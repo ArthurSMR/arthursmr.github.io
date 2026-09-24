@@ -2,20 +2,22 @@ class TexlaserLogo extends HTMLElement {
   connectedCallback() {
     if (this.dataset.ready) return;
     this.dataset.ready = 'true';
+    const filterId = `texlaser-wordmark-alpha-${++TexlaserLogo.instanceCount}`;
     this.innerHTML = `
       <span class="brand-lockup" aria-hidden="true">
         <svg class="brand-wordmark" viewBox="35 52 1465 112" role="presentation" focusable="false">
           <defs>
-            <filter id="texlaser-wordmark-alpha" color-interpolation-filters="sRGB">
+            <filter id="${filterId}" color-interpolation-filters="sRGB">
               <feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  .34 .34 .34 0 -.18" />
             </filter>
           </defs>
-          <image href="assets/texlaser-wordmark-source.jpeg" width="1600" height="200" filter="url(#texlaser-wordmark-alpha)" />
+          <image href="assets/texlaser-wordmark-source.jpeg" width="1600" height="200" filter="url(#${filterId})" />
         </svg>
         <span class="brand-group">GROUP</span>
       </span>`;
   }
 }
+TexlaserLogo.instanceCount = 0;
 
 if (!customElements.get('texlaser-logo')) customElements.define('texlaser-logo', TexlaserLogo);
 
@@ -26,8 +28,7 @@ const getPreferredLanguage = () => {
   let saved = null;
   try { saved = window.localStorage.getItem('texlaser-language'); } catch (error) { /* Storage may be unavailable in privacy-restricted contexts. */ }
   if (supportedLanguages.includes(saved)) return saved;
-  const browserLanguage = (navigator.language || 'pt-BR').toLowerCase();
-  return browserLanguage.startsWith('en') ? 'en' : browserLanguage.startsWith('es') ? 'es' : 'pt-BR';
+  return 'pt-BR';
 };
 
 const applyLanguage = (language) => {
@@ -187,7 +188,5 @@ requestScrollEffects();
 contactForm?.addEventListener('submit', (event) => {
   event.preventDefault();
   const locale = window.TEXLASER_LOCALES?.[document.documentElement.lang] || window.TEXLASER_LOCALES['pt-BR'];
-  formNote.innerHTML = getValue(locale, 'form.success');
-  formNote.style.color = '#b7e1ff';
-  contactForm.reset();
+  if (formNote) formNote.textContent = getValue(locale, 'form.success');
 });
